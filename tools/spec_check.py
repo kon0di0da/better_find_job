@@ -211,11 +211,13 @@ def main() -> int:
             "date": "2026-09-01",
             "remote_repository": "https://github.com/kon0di0da/better_find_job.git",
             "branch": "aime/1788264697-spec-materialization",
-            "git_commit": "PENDING_FIRST_COMMIT",
         }
         for key, expected in expected_metadata.items():
             if str(baseline.get(key)) != expected:
                 fail(errors, f"baseline.{key} 应为 {expected!r}")
+        git_commit = str(baseline.get("git_commit", ""))
+        if git_commit != "PENDING_FIRST_COMMIT" and not re.fullmatch(r"[0-9a-f]{40}", git_commit):
+            fail(errors, "baseline.git_commit 应为 PENDING_FIRST_COMMIT 或 40 位 Git commit SHA")
         lark = baseline.get("lark", {})
         if lark.get("doc_token") != "AIsvdTz9CoM8qhxZ4S9cPJt0n3c" or lark.get("accepted_revision_id") != 87 or lark.get("materialized_revision_id") != 90:
             fail(errors, "baseline Lark token/revision 不符合锁定值")

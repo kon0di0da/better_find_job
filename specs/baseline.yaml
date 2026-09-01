@@ -7,7 +7,7 @@ lark:
   materialized_revision_id: 90
 remote_repository: https://github.com/kon0di0da/better_find_job.git
 branch: aime/1788264697-spec-materialization
-git_commit: PENDING_FIRST_COMMIT
+git_commit: 0c902ec617d1c22992d48afd8cd37cb01944e075
 checksum_algorithm: sha256
 checksums:
   specs/ddl/v0.2.sql: sha256:a38e39455c85a66604b4e3ecb318bf70b7dbd0c467c980195a2b86d53e70c28f
