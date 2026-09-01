@@ -1,16 +1,40 @@
 id: WP-FOUNDATION-003
 title: 数据库迁移框架
 pr: PR-1
-status: BLOCKED
+status: READY
 goal: 建立三个服务 schema 与 migration up/down 骨架
 depends_on: [WP-FOUNDATION-001, WP-FOUNDATION-002]
-outputs: [migrations/profile, migrations/knowledge, migrations/interview]
-path_allowlist: [migrations/profile/**, migrations/knowledge/**, migrations/interview/**]
+outputs:
+  - migrations/profile
+  - migrations/knowledge
+  - migrations/interview
+  - migrations/env.py
+  - migrations/alembic.ini
+  - migrations/requirements-dev.txt
+  - tests/migrations
+  - Makefile
+path_allowlist:
+  - migrations/**
+  - tests/migrations/**
+  - Makefile
 traceability:
   requirements: [REQ-PROFILE-001, REQ-PROFILE-002, REQ-PROFILE-003, REQ-KNOWLEDGE-001, REQ-KNOWLEDGE-002, REQ-PLAN-001, REQ-SESSION-001, REQ-SESSION-002, REQ-ASSESS-001, REQ-ASSESS-002]
   test_cases: [TC-MIGRATION-001]
   mocks: []
   design: ['22.1']
+tooling:
+  database: PostgreSQL >=15
+  migration: Alembic >=1.14,<2
+  driver: psycopg >=3.2,<4
 verification: [make migration-test]
-dod: [空库 up/down/up checksum 一致]
+acceptance:
+  TC-MIGRATION-001:
+    - 仅在数据库名包含 test 且 ALLOW_DESTRUCTIVE_MIGRATION_TEST=1 时运行
+    - canonical DDL 与首次 Alembic upgrade 后的数据库结构 checksum 一致
+    - Alembic downgrade base 后 profile、knowledge、interview schema 均不存在
+    - 二次 Alembic upgrade 后的数据库结构 checksum 与首次一致
+dod:
+  - 空库 up/down/up checksum 一致
+  - 迁移结构与 specs/ddl/v0.2.sql canonical DDL 一致
+  - profile、knowledge、interview 迁移顺序与回滚顺序确定
 rollback: 仅执行无数据损失的 down；否则恢复快照

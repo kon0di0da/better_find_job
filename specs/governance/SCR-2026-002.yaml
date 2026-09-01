@@ -1,0 +1,46 @@
+scr_id: SCR-2026-002
+status: APPROVED
+reason: >-
+  WP-FOUNDATION-002 已通过全部验收，但状态及 Agent 当前范围未同步；WP-FOUNDATION-003
+  仍为 BLOCKED，且缺少 migration-test 路径授权、迁移工具与数据库验收环境定义。
+requested_by: 孙雨
+requested_at: '2026-09-02'
+impact:
+  requirements:
+    - REQ-PROFILE-001
+    - REQ-PROFILE-002
+    - REQ-PROFILE-003
+    - REQ-KNOWLEDGE-001
+    - REQ-KNOWLEDGE-002
+    - REQ-PLAN-001
+    - REQ-SESSION-001
+    - REQ-SESSION-002
+    - REQ-ASSESS-001
+    - REQ-ASSESS-002
+  api: []
+  ddl: []
+  events: []
+  work_packages: [WP-FOUNDATION-002, WP-FOUNDATION-003]
+  test_cases: [TC-MIGRATION-001]
+  mocks: []
+changes:
+  - 将 WP-FOUNDATION-002 状态调整为 DONE
+  - 将 WP-FOUNDATION-003 状态调整为 READY
+  - 明确使用 Alembic、SQLAlchemy 与 psycopg 管理 PostgreSQL 15+ 迁移
+  - 将 migrations/**、tests/migrations/** 与 Makefile 纳入 WP-FOUNDATION-003 allowlist
+  - migration-test 必须在专用测试库执行 canonical DDL 对齐及 up/down/up 校验
+  - 将 AGENTS.md 与 CLAUDE.md 当前执行单元同步为 WP-FOUNDATION-003
+security_privacy: >-
+  迁移测试不处理用户数据；仅允许在数据库名包含 test 且显式设置
+  ALLOW_DESTRUCTIVE_MIGRATION_TEST=1 时执行破坏性回滚。
+compatibility: backward-compatible
+version_change: patch
+approvals:
+  product: 'APPROVED: 孙雨, 2026-09-02'
+  backend: 'APPROVED: 孙雨, 2026-09-02'
+  qa: 'APPROVED: 孙雨, 2026-09-02'
+  security: 'APPROVED: 孙雨, 2026-09-02'
+migration_plan: 在专用 PostgreSQL 15+ 测试库中按 profile、knowledge、interview 顺序升级并逆序回滚
+rollback_plan: 回退 SCR 与迁移框架提交；仅在无业务数据的专用测试库执行 downgrade
+baseline_before: 1cbd11a56e7fb94debb6e503e003534c43dd3e08
+baseline_after: v0.2+SCR-2026-002

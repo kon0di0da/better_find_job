@@ -11,4 +11,4 @@
 7. 仅在依赖全部完成、Gate-SPEC=PASS 且 WP 明确为 READY 时执行；验证命令非 0 时不得继续下一 WP。
 8. 变更必须可追踪至稳定的 REQ/WP/TC/MOCK ID，并按 WP 的 rollback 执行回滚。
 
-当前执行单元：`WP-FOUNDATION-001 Spec materialization`。本 WP 只允许物化规范、最小 `make spec-check` 与 Agent 约束，不实现业务服务或 WP-FOUNDATION-007 的其他 CI。
+当前执行单元：`WP-FOUNDATION-003 数据库迁移框架`。本 WP 仅允许建立 PostgreSQL 迁移、测试与 `make migration-test`，不得实现仓储、业务 API、Mock adapter 或后续 WP。
