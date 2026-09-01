@@ -1,0 +1,2189 @@
+{
+  "schema_version": "1.0",
+  "records": [
+    {
+      "question_id": "question-001",
+      "version": 1,
+      "topic": "algorithms",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 4, explain how you would apply algorithm analysis to requirement 1 and verify the result.",
+      "skill_tags": [
+        "algorithms",
+        "algorithm analysis"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-002",
+      "version": 1,
+      "topic": "algorithms",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 3, explain how you would apply algorithm analysis to requirement 2 and verify the result.",
+      "skill_tags": [
+        "algorithms",
+        "algorithm analysis"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-003",
+      "version": 1,
+      "topic": "algorithms",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 7, explain how you would apply algorithm analysis to requirement 3 and verify the result.",
+      "skill_tags": [
+        "algorithms",
+        "algorithm analysis"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-004",
+      "version": 1,
+      "topic": "algorithms",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 7, explain how you would apply algorithm analysis to requirement 4 and verify the result.",
+      "skill_tags": [
+        "algorithms",
+        "algorithm analysis"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-005",
+      "version": 1,
+      "topic": "algorithms",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 1, explain how you would apply algorithm analysis to requirement 5 and verify the result.",
+      "skill_tags": [
+        "algorithms",
+        "algorithm analysis"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-006",
+      "version": 1,
+      "topic": "algorithms",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 4, explain how you would apply algorithm analysis to requirement 6 and verify the result.",
+      "skill_tags": [
+        "algorithms",
+        "algorithm analysis"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-007",
+      "version": 1,
+      "topic": "algorithms",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 5, explain how you would apply algorithm analysis to requirement 7 and verify the result.",
+      "skill_tags": [
+        "algorithms",
+        "algorithm analysis"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-008",
+      "version": 1,
+      "topic": "algorithms",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 4, explain how you would apply algorithm analysis to requirement 8 and verify the result.",
+      "skill_tags": [
+        "algorithms",
+        "algorithm analysis"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-009",
+      "version": 1,
+      "topic": "algorithms",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 3, explain how you would apply algorithm analysis to requirement 9 and verify the result.",
+      "skill_tags": [
+        "algorithms",
+        "algorithm analysis"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-010",
+      "version": 1,
+      "topic": "algorithms",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 3, explain how you would apply algorithm analysis to requirement 10 and verify the result.",
+      "skill_tags": [
+        "algorithms",
+        "algorithm analysis"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-011",
+      "version": 1,
+      "topic": "algorithms",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 7, explain how you would apply algorithm analysis to requirement 11 and verify the result.",
+      "skill_tags": [
+        "algorithms",
+        "algorithm analysis"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-012",
+      "version": 1,
+      "topic": "algorithms",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 1, explain how you would apply algorithm analysis to requirement 12 and verify the result.",
+      "skill_tags": [
+        "algorithms",
+        "algorithm analysis"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-013",
+      "version": 1,
+      "topic": "algorithms",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 6, explain how you would apply algorithm analysis to requirement 13 and verify the result.",
+      "skill_tags": [
+        "algorithms",
+        "algorithm analysis"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-014",
+      "version": 1,
+      "topic": "data_structures",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 2, explain how you would apply data structure selection to requirement 1 and verify the result.",
+      "skill_tags": [
+        "data_structures",
+        "data structure selection"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-015",
+      "version": 1,
+      "topic": "data_structures",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 6, explain how you would apply data structure selection to requirement 2 and verify the result.",
+      "skill_tags": [
+        "data_structures",
+        "data structure selection"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-016",
+      "version": 1,
+      "topic": "data_structures",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 3, explain how you would apply data structure selection to requirement 3 and verify the result.",
+      "skill_tags": [
+        "data_structures",
+        "data structure selection"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-017",
+      "version": 1,
+      "topic": "data_structures",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 4, explain how you would apply data structure selection to requirement 4 and verify the result.",
+      "skill_tags": [
+        "data_structures",
+        "data structure selection"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-018",
+      "version": 1,
+      "topic": "data_structures",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 5, explain how you would apply data structure selection to requirement 5 and verify the result.",
+      "skill_tags": [
+        "data_structures",
+        "data structure selection"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-019",
+      "version": 1,
+      "topic": "data_structures",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 5, explain how you would apply data structure selection to requirement 6 and verify the result.",
+      "skill_tags": [
+        "data_structures",
+        "data structure selection"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-020",
+      "version": 1,
+      "topic": "data_structures",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 1, explain how you would apply data structure selection to requirement 7 and verify the result.",
+      "skill_tags": [
+        "data_structures",
+        "data structure selection"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-021",
+      "version": 1,
+      "topic": "data_structures",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 1, explain how you would apply data structure selection to requirement 8 and verify the result.",
+      "skill_tags": [
+        "data_structures",
+        "data structure selection"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-022",
+      "version": 1,
+      "topic": "data_structures",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 1, explain how you would apply data structure selection to requirement 9 and verify the result.",
+      "skill_tags": [
+        "data_structures",
+        "data structure selection"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-023",
+      "version": 1,
+      "topic": "data_structures",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 7, explain how you would apply data structure selection to requirement 10 and verify the result.",
+      "skill_tags": [
+        "data_structures",
+        "data structure selection"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-024",
+      "version": 1,
+      "topic": "data_structures",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 7, explain how you would apply data structure selection to requirement 11 and verify the result.",
+      "skill_tags": [
+        "data_structures",
+        "data structure selection"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-025",
+      "version": 1,
+      "topic": "data_structures",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 2, explain how you would apply data structure selection to requirement 12 and verify the result.",
+      "skill_tags": [
+        "data_structures",
+        "data structure selection"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-026",
+      "version": 1,
+      "topic": "data_structures",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 1, explain how you would apply data structure selection to requirement 13 and verify the result.",
+      "skill_tags": [
+        "data_structures",
+        "data structure selection"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-027",
+      "version": 1,
+      "topic": "databases",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 7, explain how you would apply database consistency to requirement 1 and verify the result.",
+      "skill_tags": [
+        "databases",
+        "database consistency"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-028",
+      "version": 1,
+      "topic": "databases",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 5, explain how you would apply database consistency to requirement 2 and verify the result.",
+      "skill_tags": [
+        "databases",
+        "database consistency"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-029",
+      "version": 1,
+      "topic": "databases",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 3, explain how you would apply database consistency to requirement 3 and verify the result.",
+      "skill_tags": [
+        "databases",
+        "database consistency"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-030",
+      "version": 1,
+      "topic": "databases",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 7, explain how you would apply database consistency to requirement 4 and verify the result.",
+      "skill_tags": [
+        "databases",
+        "database consistency"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-031",
+      "version": 1,
+      "topic": "databases",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 7, explain how you would apply database consistency to requirement 5 and verify the result.",
+      "skill_tags": [
+        "databases",
+        "database consistency"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-032",
+      "version": 1,
+      "topic": "databases",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 1, explain how you would apply database consistency to requirement 6 and verify the result.",
+      "skill_tags": [
+        "databases",
+        "database consistency"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-033",
+      "version": 1,
+      "topic": "databases",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 3, explain how you would apply database consistency to requirement 7 and verify the result.",
+      "skill_tags": [
+        "databases",
+        "database consistency"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-034",
+      "version": 1,
+      "topic": "databases",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 4, explain how you would apply database consistency to requirement 8 and verify the result.",
+      "skill_tags": [
+        "databases",
+        "database consistency"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-035",
+      "version": 1,
+      "topic": "databases",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 5, explain how you would apply database consistency to requirement 9 and verify the result.",
+      "skill_tags": [
+        "databases",
+        "database consistency"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-036",
+      "version": 1,
+      "topic": "databases",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 5, explain how you would apply database consistency to requirement 10 and verify the result.",
+      "skill_tags": [
+        "databases",
+        "database consistency"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-037",
+      "version": 1,
+      "topic": "databases",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 3, explain how you would apply database consistency to requirement 11 and verify the result.",
+      "skill_tags": [
+        "databases",
+        "database consistency"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-038",
+      "version": 1,
+      "topic": "databases",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 7, explain how you would apply database consistency to requirement 12 and verify the result.",
+      "skill_tags": [
+        "databases",
+        "database consistency"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-039",
+      "version": 1,
+      "topic": "databases",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 1, explain how you would apply database consistency to requirement 13 and verify the result.",
+      "skill_tags": [
+        "databases",
+        "database consistency"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-040",
+      "version": 1,
+      "topic": "networks",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 2, explain how you would apply network reliability to requirement 1 and verify the result.",
+      "skill_tags": [
+        "networks",
+        "network reliability"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-041",
+      "version": 1,
+      "topic": "networks",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 1, explain how you would apply network reliability to requirement 2 and verify the result.",
+      "skill_tags": [
+        "networks",
+        "network reliability"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-042",
+      "version": 1,
+      "topic": "networks",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 6, explain how you would apply network reliability to requirement 3 and verify the result.",
+      "skill_tags": [
+        "networks",
+        "network reliability"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-043",
+      "version": 1,
+      "topic": "networks",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 4, explain how you would apply network reliability to requirement 4 and verify the result.",
+      "skill_tags": [
+        "networks",
+        "network reliability"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-044",
+      "version": 1,
+      "topic": "networks",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 5, explain how you would apply network reliability to requirement 5 and verify the result.",
+      "skill_tags": [
+        "networks",
+        "network reliability"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-045",
+      "version": 1,
+      "topic": "networks",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 4, explain how you would apply network reliability to requirement 6 and verify the result.",
+      "skill_tags": [
+        "networks",
+        "network reliability"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-046",
+      "version": 1,
+      "topic": "networks",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 1, explain how you would apply network reliability to requirement 7 and verify the result.",
+      "skill_tags": [
+        "networks",
+        "network reliability"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-047",
+      "version": 1,
+      "topic": "networks",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 2, explain how you would apply network reliability to requirement 8 and verify the result.",
+      "skill_tags": [
+        "networks",
+        "network reliability"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-048",
+      "version": 1,
+      "topic": "networks",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 1, explain how you would apply network reliability to requirement 9 and verify the result.",
+      "skill_tags": [
+        "networks",
+        "network reliability"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-049",
+      "version": 1,
+      "topic": "networks",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 7, explain how you would apply network reliability to requirement 10 and verify the result.",
+      "skill_tags": [
+        "networks",
+        "network reliability"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-050",
+      "version": 1,
+      "topic": "networks",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 1, explain how you would apply network reliability to requirement 11 and verify the result.",
+      "skill_tags": [
+        "networks",
+        "network reliability"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-051",
+      "version": 1,
+      "topic": "networks",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 2, explain how you would apply network reliability to requirement 12 and verify the result.",
+      "skill_tags": [
+        "networks",
+        "network reliability"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-052",
+      "version": 1,
+      "topic": "networks",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 5, explain how you would apply network reliability to requirement 13 and verify the result.",
+      "skill_tags": [
+        "networks",
+        "network reliability"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-053",
+      "version": 1,
+      "topic": "operating_systems",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 2, explain how you would apply operating system isolation to requirement 1 and verify the result.",
+      "skill_tags": [
+        "operating_systems",
+        "operating system isolation"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-054",
+      "version": 1,
+      "topic": "operating_systems",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 3, explain how you would apply operating system isolation to requirement 2 and verify the result.",
+      "skill_tags": [
+        "operating_systems",
+        "operating system isolation"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-055",
+      "version": 1,
+      "topic": "operating_systems",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 7, explain how you would apply operating system isolation to requirement 3 and verify the result.",
+      "skill_tags": [
+        "operating_systems",
+        "operating system isolation"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-056",
+      "version": 1,
+      "topic": "operating_systems",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 2, explain how you would apply operating system isolation to requirement 4 and verify the result.",
+      "skill_tags": [
+        "operating_systems",
+        "operating system isolation"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-057",
+      "version": 1,
+      "topic": "operating_systems",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 2, explain how you would apply operating system isolation to requirement 5 and verify the result.",
+      "skill_tags": [
+        "operating_systems",
+        "operating system isolation"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-058",
+      "version": 1,
+      "topic": "operating_systems",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 7, explain how you would apply operating system isolation to requirement 6 and verify the result.",
+      "skill_tags": [
+        "operating_systems",
+        "operating system isolation"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-059",
+      "version": 1,
+      "topic": "operating_systems",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 6, explain how you would apply operating system isolation to requirement 7 and verify the result.",
+      "skill_tags": [
+        "operating_systems",
+        "operating system isolation"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-060",
+      "version": 1,
+      "topic": "operating_systems",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 4, explain how you would apply operating system isolation to requirement 8 and verify the result.",
+      "skill_tags": [
+        "operating_systems",
+        "operating system isolation"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-061",
+      "version": 1,
+      "topic": "operating_systems",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 3, explain how you would apply operating system isolation to requirement 9 and verify the result.",
+      "skill_tags": [
+        "operating_systems",
+        "operating system isolation"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-062",
+      "version": 1,
+      "topic": "operating_systems",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 7, explain how you would apply operating system isolation to requirement 10 and verify the result.",
+      "skill_tags": [
+        "operating_systems",
+        "operating system isolation"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-063",
+      "version": 1,
+      "topic": "operating_systems",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 2, explain how you would apply operating system isolation to requirement 11 and verify the result.",
+      "skill_tags": [
+        "operating_systems",
+        "operating system isolation"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-064",
+      "version": 1,
+      "topic": "operating_systems",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 3, explain how you would apply operating system isolation to requirement 12 and verify the result.",
+      "skill_tags": [
+        "operating_systems",
+        "operating system isolation"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-065",
+      "version": 1,
+      "topic": "operating_systems",
+      "question_type": "knowledge",
+      "stem": "In synthetic scenario 6, explain how you would apply operating system isolation to requirement 13 and verify the result.",
+      "skill_tags": [
+        "operating_systems",
+        "operating system isolation"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-066",
+      "version": 1,
+      "topic": "system_design",
+      "question_type": "system_design",
+      "stem": "In synthetic scenario 2, explain how you would apply distributed system design to requirement 1 and verify the result.",
+      "skill_tags": [
+        "system_design",
+        "distributed system design"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-067",
+      "version": 1,
+      "topic": "system_design",
+      "question_type": "system_design",
+      "stem": "In synthetic scenario 4, explain how you would apply distributed system design to requirement 2 and verify the result.",
+      "skill_tags": [
+        "system_design",
+        "distributed system design"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-068",
+      "version": 1,
+      "topic": "system_design",
+      "question_type": "system_design",
+      "stem": "In synthetic scenario 3, explain how you would apply distributed system design to requirement 3 and verify the result.",
+      "skill_tags": [
+        "system_design",
+        "distributed system design"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-069",
+      "version": 1,
+      "topic": "system_design",
+      "question_type": "system_design",
+      "stem": "In synthetic scenario 1, explain how you would apply distributed system design to requirement 4 and verify the result.",
+      "skill_tags": [
+        "system_design",
+        "distributed system design"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-070",
+      "version": 1,
+      "topic": "system_design",
+      "question_type": "system_design",
+      "stem": "In synthetic scenario 5, explain how you would apply distributed system design to requirement 5 and verify the result.",
+      "skill_tags": [
+        "system_design",
+        "distributed system design"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-071",
+      "version": 1,
+      "topic": "system_design",
+      "question_type": "system_design",
+      "stem": "In synthetic scenario 5, explain how you would apply distributed system design to requirement 6 and verify the result.",
+      "skill_tags": [
+        "system_design",
+        "distributed system design"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-072",
+      "version": 1,
+      "topic": "system_design",
+      "question_type": "system_design",
+      "stem": "In synthetic scenario 7, explain how you would apply distributed system design to requirement 7 and verify the result.",
+      "skill_tags": [
+        "system_design",
+        "distributed system design"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-073",
+      "version": 1,
+      "topic": "system_design",
+      "question_type": "system_design",
+      "stem": "In synthetic scenario 4, explain how you would apply distributed system design to requirement 8 and verify the result.",
+      "skill_tags": [
+        "system_design",
+        "distributed system design"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-074",
+      "version": 1,
+      "topic": "system_design",
+      "question_type": "system_design",
+      "stem": "In synthetic scenario 2, explain how you would apply distributed system design to requirement 9 and verify the result.",
+      "skill_tags": [
+        "system_design",
+        "distributed system design"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-075",
+      "version": 1,
+      "topic": "system_design",
+      "question_type": "system_design",
+      "stem": "In synthetic scenario 2, explain how you would apply distributed system design to requirement 10 and verify the result.",
+      "skill_tags": [
+        "system_design",
+        "distributed system design"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-076",
+      "version": 1,
+      "topic": "system_design",
+      "question_type": "system_design",
+      "stem": "In synthetic scenario 6, explain how you would apply distributed system design to requirement 11 and verify the result.",
+      "skill_tags": [
+        "system_design",
+        "distributed system design"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-077",
+      "version": 1,
+      "topic": "system_design",
+      "question_type": "system_design",
+      "stem": "In synthetic scenario 5, explain how you would apply distributed system design to requirement 12 and verify the result.",
+      "skill_tags": [
+        "system_design",
+        "distributed system design"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-078",
+      "version": 1,
+      "topic": "system_design",
+      "question_type": "system_design",
+      "stem": "In synthetic scenario 4, explain how you would apply distributed system design to requirement 13 and verify the result.",
+      "skill_tags": [
+        "system_design",
+        "distributed system design"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-079",
+      "version": 1,
+      "topic": "python",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 4, explain how you would apply Python engineering to requirement 1 and verify the result.",
+      "skill_tags": [
+        "python",
+        "Python engineering"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-080",
+      "version": 1,
+      "topic": "python",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 3, explain how you would apply Python engineering to requirement 2 and verify the result.",
+      "skill_tags": [
+        "python",
+        "Python engineering"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-081",
+      "version": 1,
+      "topic": "python",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 2, explain how you would apply Python engineering to requirement 3 and verify the result.",
+      "skill_tags": [
+        "python",
+        "Python engineering"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-082",
+      "version": 1,
+      "topic": "python",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 2, explain how you would apply Python engineering to requirement 4 and verify the result.",
+      "skill_tags": [
+        "python",
+        "Python engineering"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-083",
+      "version": 1,
+      "topic": "python",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 2, explain how you would apply Python engineering to requirement 5 and verify the result.",
+      "skill_tags": [
+        "python",
+        "Python engineering"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-084",
+      "version": 1,
+      "topic": "python",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 3, explain how you would apply Python engineering to requirement 6 and verify the result.",
+      "skill_tags": [
+        "python",
+        "Python engineering"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-085",
+      "version": 1,
+      "topic": "python",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 1, explain how you would apply Python engineering to requirement 7 and verify the result.",
+      "skill_tags": [
+        "python",
+        "Python engineering"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-086",
+      "version": 1,
+      "topic": "python",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 3, explain how you would apply Python engineering to requirement 8 and verify the result.",
+      "skill_tags": [
+        "python",
+        "Python engineering"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-087",
+      "version": 1,
+      "topic": "python",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 4, explain how you would apply Python engineering to requirement 9 and verify the result.",
+      "skill_tags": [
+        "python",
+        "Python engineering"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-088",
+      "version": 1,
+      "topic": "python",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 2, explain how you would apply Python engineering to requirement 10 and verify the result.",
+      "skill_tags": [
+        "python",
+        "Python engineering"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-089",
+      "version": 1,
+      "topic": "python",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 6, explain how you would apply Python engineering to requirement 11 and verify the result.",
+      "skill_tags": [
+        "python",
+        "Python engineering"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-090",
+      "version": 1,
+      "topic": "python",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 4, explain how you would apply Python engineering to requirement 12 and verify the result.",
+      "skill_tags": [
+        "python",
+        "Python engineering"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-091",
+      "version": 1,
+      "topic": "python",
+      "question_type": "coding",
+      "stem": "In synthetic scenario 4, explain how you would apply Python engineering to requirement 13 and verify the result.",
+      "skill_tags": [
+        "python",
+        "Python engineering"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-092",
+      "version": 1,
+      "topic": "software_engineering",
+      "question_type": "project",
+      "stem": "In synthetic scenario 3, explain how you would apply software delivery to requirement 1 and verify the result.",
+      "skill_tags": [
+        "software_engineering",
+        "software delivery"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-093",
+      "version": 1,
+      "topic": "software_engineering",
+      "question_type": "project",
+      "stem": "In synthetic scenario 1, explain how you would apply software delivery to requirement 2 and verify the result.",
+      "skill_tags": [
+        "software_engineering",
+        "software delivery"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-094",
+      "version": 1,
+      "topic": "software_engineering",
+      "question_type": "project",
+      "stem": "In synthetic scenario 1, explain how you would apply software delivery to requirement 3 and verify the result.",
+      "skill_tags": [
+        "software_engineering",
+        "software delivery"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-095",
+      "version": 1,
+      "topic": "software_engineering",
+      "question_type": "project",
+      "stem": "In synthetic scenario 1, explain how you would apply software delivery to requirement 4 and verify the result.",
+      "skill_tags": [
+        "software_engineering",
+        "software delivery"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-096",
+      "version": 1,
+      "topic": "software_engineering",
+      "question_type": "project",
+      "stem": "In synthetic scenario 3, explain how you would apply software delivery to requirement 5 and verify the result.",
+      "skill_tags": [
+        "software_engineering",
+        "software delivery"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-097",
+      "version": 1,
+      "topic": "software_engineering",
+      "question_type": "project",
+      "stem": "In synthetic scenario 6, explain how you would apply software delivery to requirement 6 and verify the result.",
+      "skill_tags": [
+        "software_engineering",
+        "software delivery"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-098",
+      "version": 1,
+      "topic": "software_engineering",
+      "question_type": "project",
+      "stem": "In synthetic scenario 1, explain how you would apply software delivery to requirement 7 and verify the result.",
+      "skill_tags": [
+        "software_engineering",
+        "software delivery"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-099",
+      "version": 1,
+      "topic": "software_engineering",
+      "question_type": "project",
+      "stem": "In synthetic scenario 3, explain how you would apply software delivery to requirement 8 and verify the result.",
+      "skill_tags": [
+        "software_engineering",
+        "software delivery"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-100",
+      "version": 1,
+      "topic": "software_engineering",
+      "question_type": "project",
+      "stem": "In synthetic scenario 3, explain how you would apply software delivery to requirement 9 and verify the result.",
+      "skill_tags": [
+        "software_engineering",
+        "software delivery"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-101",
+      "version": 1,
+      "topic": "software_engineering",
+      "question_type": "project",
+      "stem": "In synthetic scenario 1, explain how you would apply software delivery to requirement 10 and verify the result.",
+      "skill_tags": [
+        "software_engineering",
+        "software delivery"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-102",
+      "version": 1,
+      "topic": "software_engineering",
+      "question_type": "project",
+      "stem": "In synthetic scenario 5, explain how you would apply software delivery to requirement 11 and verify the result.",
+      "skill_tags": [
+        "software_engineering",
+        "software delivery"
+      ],
+      "difficulty": "intermediate",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-103",
+      "version": 1,
+      "topic": "software_engineering",
+      "question_type": "project",
+      "stem": "In synthetic scenario 7, explain how you would apply software delivery to requirement 12 and verify the result.",
+      "skill_tags": [
+        "software_engineering",
+        "software delivery"
+      ],
+      "difficulty": "senior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    },
+    {
+      "question_id": "question-104",
+      "version": 1,
+      "topic": "software_engineering",
+      "question_type": "project",
+      "stem": "In synthetic scenario 2, explain how you would apply software delivery to requirement 13 and verify the result.",
+      "skill_tags": [
+        "software_engineering",
+        "software delivery"
+      ],
+      "difficulty": "junior",
+      "rubric": [
+        "States assumptions and constraints",
+        "Explains a technically sound approach",
+        "Describes deterministic verification"
+      ],
+      "source": "synthetic-generator-v1",
+      "review_status": "APPROVED",
+      "enabled": true,
+      "synthetic": true
+    }
+  ]
+}

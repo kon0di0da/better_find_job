@@ -1,0 +1,695 @@
+{
+  "schema_version": "1.0",
+  "records": [
+    {
+      "gold_case_id": "gold-case-001",
+      "resume_id": "resume-001",
+      "jd_id": "jd-001",
+      "question_ids": [
+        "question-040",
+        "question-049",
+        "question-058",
+        "question-067",
+        "question-076",
+        "question-085",
+        "question-094",
+        "question-103",
+        "question-008",
+        "question-017"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-002",
+      "resume_id": "resume-002",
+      "jd_id": "jd-002",
+      "question_ids": [
+        "question-052",
+        "question-061",
+        "question-070",
+        "question-079",
+        "question-088",
+        "question-097",
+        "question-002",
+        "question-011",
+        "question-020",
+        "question-029"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-003",
+      "resume_id": "resume-003",
+      "jd_id": "jd-003",
+      "question_ids": [
+        "question-052",
+        "question-061",
+        "question-070",
+        "question-079",
+        "question-088",
+        "question-097",
+        "question-002",
+        "question-011",
+        "question-020",
+        "question-029"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-004",
+      "resume_id": "resume-004",
+      "jd_id": "jd-004",
+      "question_ids": [
+        "question-002",
+        "question-011",
+        "question-020",
+        "question-029",
+        "question-038",
+        "question-047",
+        "question-056",
+        "question-065",
+        "question-074",
+        "question-083"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-005",
+      "resume_id": "resume-005",
+      "jd_id": "jd-005",
+      "question_ids": [
+        "question-052",
+        "question-061",
+        "question-070",
+        "question-079",
+        "question-088",
+        "question-097",
+        "question-002",
+        "question-011",
+        "question-020",
+        "question-029"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-006",
+      "resume_id": "resume-001",
+      "jd_id": "jd-006",
+      "question_ids": [
+        "question-031",
+        "question-040",
+        "question-049",
+        "question-058",
+        "question-067",
+        "question-076",
+        "question-085",
+        "question-094",
+        "question-103",
+        "question-008"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-007",
+      "resume_id": "resume-002",
+      "jd_id": "jd-007",
+      "question_ids": [
+        "question-100",
+        "question-005",
+        "question-014",
+        "question-023",
+        "question-032",
+        "question-041",
+        "question-050",
+        "question-059",
+        "question-068",
+        "question-077"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-008",
+      "resume_id": "resume-003",
+      "jd_id": "jd-008",
+      "question_ids": [
+        "question-079",
+        "question-088",
+        "question-097",
+        "question-002",
+        "question-011",
+        "question-020",
+        "question-029",
+        "question-038",
+        "question-047",
+        "question-056"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-009",
+      "resume_id": "resume-004",
+      "jd_id": "jd-009",
+      "question_ids": [
+        "question-006",
+        "question-015",
+        "question-024",
+        "question-033",
+        "question-042",
+        "question-051",
+        "question-060",
+        "question-069",
+        "question-078",
+        "question-087"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-010",
+      "resume_id": "resume-005",
+      "jd_id": "jd-010",
+      "question_ids": [
+        "question-030",
+        "question-039",
+        "question-048",
+        "question-057",
+        "question-066",
+        "question-075",
+        "question-084",
+        "question-093",
+        "question-102",
+        "question-007"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-011",
+      "resume_id": "resume-001",
+      "jd_id": "jd-001",
+      "question_ids": [
+        "question-055",
+        "question-064",
+        "question-073",
+        "question-082",
+        "question-091",
+        "question-100",
+        "question-005",
+        "question-014",
+        "question-023",
+        "question-032"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-012",
+      "resume_id": "resume-002",
+      "jd_id": "jd-002",
+      "question_ids": [
+        "question-015",
+        "question-024",
+        "question-033",
+        "question-042",
+        "question-051",
+        "question-060",
+        "question-069",
+        "question-078",
+        "question-087",
+        "question-096"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-013",
+      "resume_id": "resume-003",
+      "jd_id": "jd-003",
+      "question_ids": [
+        "question-003",
+        "question-012",
+        "question-021",
+        "question-030",
+        "question-039",
+        "question-048",
+        "question-057",
+        "question-066",
+        "question-075",
+        "question-084"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-014",
+      "resume_id": "resume-004",
+      "jd_id": "jd-004",
+      "question_ids": [
+        "question-057",
+        "question-066",
+        "question-075",
+        "question-084",
+        "question-093",
+        "question-102",
+        "question-007",
+        "question-016",
+        "question-025",
+        "question-034"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-015",
+      "resume_id": "resume-005",
+      "jd_id": "jd-005",
+      "question_ids": [
+        "question-043",
+        "question-052",
+        "question-061",
+        "question-070",
+        "question-079",
+        "question-088",
+        "question-097",
+        "question-002",
+        "question-011",
+        "question-020"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-016",
+      "resume_id": "resume-001",
+      "jd_id": "jd-006",
+      "question_ids": [
+        "question-026",
+        "question-035",
+        "question-044",
+        "question-053",
+        "question-062",
+        "question-071",
+        "question-080",
+        "question-089",
+        "question-098",
+        "question-003"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-017",
+      "resume_id": "resume-002",
+      "jd_id": "jd-007",
+      "question_ids": [
+        "question-051",
+        "question-060",
+        "question-069",
+        "question-078",
+        "question-087",
+        "question-096",
+        "question-001",
+        "question-010",
+        "question-019",
+        "question-028"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-018",
+      "resume_id": "resume-003",
+      "jd_id": "jd-008",
+      "question_ids": [
+        "question-003",
+        "question-012",
+        "question-021",
+        "question-030",
+        "question-039",
+        "question-048",
+        "question-057",
+        "question-066",
+        "question-075",
+        "question-084"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-019",
+      "resume_id": "resume-004",
+      "jd_id": "jd-009",
+      "question_ids": [
+        "question-039",
+        "question-048",
+        "question-057",
+        "question-066",
+        "question-075",
+        "question-084",
+        "question-093",
+        "question-102",
+        "question-007",
+        "question-016"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-020",
+      "resume_id": "resume-005",
+      "jd_id": "jd-010",
+      "question_ids": [
+        "question-006",
+        "question-015",
+        "question-024",
+        "question-033",
+        "question-042",
+        "question-051",
+        "question-060",
+        "question-069",
+        "question-078",
+        "question-087"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-021",
+      "resume_id": "resume-001",
+      "jd_id": "jd-001",
+      "question_ids": [
+        "question-042",
+        "question-051",
+        "question-060",
+        "question-069",
+        "question-078",
+        "question-087",
+        "question-096",
+        "question-001",
+        "question-010",
+        "question-019"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-022",
+      "resume_id": "resume-002",
+      "jd_id": "jd-002",
+      "question_ids": [
+        "question-068",
+        "question-077",
+        "question-086",
+        "question-095",
+        "question-104",
+        "question-009",
+        "question-018",
+        "question-027",
+        "question-036",
+        "question-045"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-023",
+      "resume_id": "resume-003",
+      "jd_id": "jd-003",
+      "question_ids": [
+        "question-074",
+        "question-083",
+        "question-092",
+        "question-101",
+        "question-006",
+        "question-015",
+        "question-024",
+        "question-033",
+        "question-042",
+        "question-051"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-024",
+      "resume_id": "resume-004",
+      "jd_id": "jd-004",
+      "question_ids": [
+        "question-087",
+        "question-096",
+        "question-001",
+        "question-010",
+        "question-019",
+        "question-028",
+        "question-037",
+        "question-046",
+        "question-055",
+        "question-064"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-025",
+      "resume_id": "resume-005",
+      "jd_id": "jd-005",
+      "question_ids": [
+        "question-047",
+        "question-056",
+        "question-065",
+        "question-074",
+        "question-083",
+        "question-092",
+        "question-101",
+        "question-006",
+        "question-015",
+        "question-024"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-026",
+      "resume_id": "resume-001",
+      "jd_id": "jd-006",
+      "question_ids": [
+        "question-017",
+        "question-026",
+        "question-035",
+        "question-044",
+        "question-053",
+        "question-062",
+        "question-071",
+        "question-080",
+        "question-089",
+        "question-098"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-027",
+      "resume_id": "resume-002",
+      "jd_id": "jd-007",
+      "question_ids": [
+        "question-017",
+        "question-026",
+        "question-035",
+        "question-044",
+        "question-053",
+        "question-062",
+        "question-071",
+        "question-080",
+        "question-089",
+        "question-098"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-028",
+      "resume_id": "resume-003",
+      "jd_id": "jd-008",
+      "question_ids": [
+        "question-078",
+        "question-087",
+        "question-096",
+        "question-001",
+        "question-010",
+        "question-019",
+        "question-028",
+        "question-037",
+        "question-046",
+        "question-055"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-029",
+      "resume_id": "resume-004",
+      "jd_id": "jd-009",
+      "question_ids": [
+        "question-006",
+        "question-015",
+        "question-024",
+        "question-033",
+        "question-042",
+        "question-051",
+        "question-060",
+        "question-069",
+        "question-078",
+        "question-087"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    },
+    {
+      "gold_case_id": "gold-case-030",
+      "resume_id": "resume-005",
+      "jd_id": "jd-010",
+      "question_ids": [
+        "question-038",
+        "question-047",
+        "question-056",
+        "question-065",
+        "question-074",
+        "question-083",
+        "question-092",
+        "question-101",
+        "question-006",
+        "question-015"
+      ],
+      "expected_outcome": {
+        "selected_question_count": 10,
+        "minimum_jd_linked_questions": 7,
+        "project_linked_questions": 4
+      },
+      "synthetic": true
+    }
+  ]
+}

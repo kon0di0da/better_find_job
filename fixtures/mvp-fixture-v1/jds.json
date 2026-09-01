@@ -1,0 +1,205 @@
+{
+  "schema_version": "1.0",
+  "records": [
+    {
+      "jd_id": "jd-001",
+      "title": "Synthetic Backend Engineer",
+      "summary": "Synthetic job scenario used only for offline fixture evaluation; deterministic variant 4.",
+      "skills": [
+        {
+          "name": "API design",
+          "priority": "MUST"
+        },
+        {
+          "name": "Python",
+          "priority": "PREFERRED"
+        },
+        {
+          "name": "technical communication",
+          "priority": "BONUS"
+        }
+      ],
+      "synthetic": true
+    },
+    {
+      "jd_id": "jd-002",
+      "title": "Synthetic Data Infrastructure Engineer",
+      "summary": "Synthetic job scenario used only for offline fixture evaluation; deterministic variant 1.",
+      "skills": [
+        {
+          "name": "data structures",
+          "priority": "MUST"
+        },
+        {
+          "name": "Python",
+          "priority": "PREFERRED"
+        },
+        {
+          "name": "technical communication",
+          "priority": "BONUS"
+        }
+      ],
+      "synthetic": true
+    },
+    {
+      "jd_id": "jd-003",
+      "title": "Synthetic Site Reliability Engineer",
+      "summary": "Synthetic job scenario used only for offline fixture evaluation; deterministic variant 1.",
+      "skills": [
+        {
+          "name": "observability",
+          "priority": "MUST"
+        },
+        {
+          "name": "Python",
+          "priority": "PREFERRED"
+        },
+        {
+          "name": "technical communication",
+          "priority": "BONUS"
+        }
+      ],
+      "synthetic": true
+    },
+    {
+      "jd_id": "jd-004",
+      "title": "Synthetic Python Engineer",
+      "summary": "Synthetic job scenario used only for offline fixture evaluation; deterministic variant 4.",
+      "skills": [
+        {
+          "name": "Python",
+          "priority": "MUST"
+        },
+        {
+          "name": "Python",
+          "priority": "PREFERRED"
+        },
+        {
+          "name": "technical communication",
+          "priority": "BONUS"
+        }
+      ],
+      "synthetic": true
+    },
+    {
+      "jd_id": "jd-005",
+      "title": "Synthetic Database Engineer",
+      "summary": "Synthetic job scenario used only for offline fixture evaluation; deterministic variant 2.",
+      "skills": [
+        {
+          "name": "databases",
+          "priority": "MUST"
+        },
+        {
+          "name": "Python",
+          "priority": "PREFERRED"
+        },
+        {
+          "name": "technical communication",
+          "priority": "BONUS"
+        }
+      ],
+      "synthetic": true
+    },
+    {
+      "jd_id": "jd-006",
+      "title": "Synthetic Network Services Engineer",
+      "summary": "Synthetic job scenario used only for offline fixture evaluation; deterministic variant 2.",
+      "skills": [
+        {
+          "name": "networks",
+          "priority": "MUST"
+        },
+        {
+          "name": "Python",
+          "priority": "PREFERRED"
+        },
+        {
+          "name": "technical communication",
+          "priority": "BONUS"
+        }
+      ],
+      "synthetic": true
+    },
+    {
+      "jd_id": "jd-007",
+      "title": "Synthetic Systems Engineer",
+      "summary": "Synthetic job scenario used only for offline fixture evaluation; deterministic variant 3.",
+      "skills": [
+        {
+          "name": "operating systems",
+          "priority": "MUST"
+        },
+        {
+          "name": "Python",
+          "priority": "PREFERRED"
+        },
+        {
+          "name": "technical communication",
+          "priority": "BONUS"
+        }
+      ],
+      "synthetic": true
+    },
+    {
+      "jd_id": "jd-008",
+      "title": "Synthetic Distributed Systems Engineer",
+      "summary": "Synthetic job scenario used only for offline fixture evaluation; deterministic variant 3.",
+      "skills": [
+        {
+          "name": "system design",
+          "priority": "MUST"
+        },
+        {
+          "name": "Python",
+          "priority": "PREFERRED"
+        },
+        {
+          "name": "technical communication",
+          "priority": "BONUS"
+        }
+      ],
+      "synthetic": true
+    },
+    {
+      "jd_id": "jd-009",
+      "title": "Synthetic Developer Productivity Engineer",
+      "summary": "Synthetic job scenario used only for offline fixture evaluation; deterministic variant 1.",
+      "skills": [
+        {
+          "name": "software engineering",
+          "priority": "MUST"
+        },
+        {
+          "name": "Python",
+          "priority": "PREFERRED"
+        },
+        {
+          "name": "technical communication",
+          "priority": "BONUS"
+        }
+      ],
+      "synthetic": true
+    },
+    {
+      "jd_id": "jd-010",
+      "title": "Synthetic Software Quality Engineer",
+      "summary": "Synthetic job scenario used only for offline fixture evaluation; deterministic variant 2.",
+      "skills": [
+        {
+          "name": "testing",
+          "priority": "MUST"
+        },
+        {
+          "name": "Python",
+          "priority": "PREFERRED"
+        },
+        {
+          "name": "technical communication",
+          "priority": "BONUS"
+        }
+      ],
+      "synthetic": true
+    }
+  ]
+}

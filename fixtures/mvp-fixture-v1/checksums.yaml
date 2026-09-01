@@ -1,0 +1,12 @@
+algorithm: sha256
+files:
+  - path: gold_cases.json
+    sha256: f3965a7a70b6f0fcd20d31b66790adcd3d79c5f6d853c86998b2bdc409c7e515
+  - path: jds.json
+    sha256: c82bc56802f3945e03b877c3045049f7541f0de117edeb7129f2c195f2758149
+  - path: manifest.json
+    sha256: 2e4c0f5a9b293c16305e2fa28aa465df35ead0274e1c871835c4c4c505fe431c
+  - path: questions.json
+    sha256: 9a002fd6c2c098a87ecb6d8b63cf92249891a2d039aaf270578b8c297e0766ac
+  - path: resumes.json
+    sha256: 7d1961feae1bf298d59cad81b22c5bfa54bfd60b4e0d8ab681aa3147916ea6c1

@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0",
+  "records": [
+    {
+      "resume_id": "resume-001",
+      "candidate_id": "candidate-001",
+      "headline": "Synthetic Backend Systems Engineer",
+      "summary": "Synthetic candidate profile for deterministic evaluation; scenario variant 4 emphasizes maintainable services.",
+      "skills": [
+        "Python",
+        "SQL",
+        "API design",
+        "testing"
+      ],
+      "projects": [
+        {
+          "project_id": "project-001",
+          "title": "Synthetic service project 001",
+          "description": "Designed a synthetic service workflow with deterministic tests and measurable reliability goals.",
+          "skill_tags": [
+            "Python",
+            "SQL"
+          ]
+        },
+        {
+          "project_id": "project-002",
+          "title": "Synthetic platform project 002",
+          "description": "Improved a synthetic platform through explicit contracts, reviewable changes, and offline validation.",
+          "skill_tags": [
+            "API design",
+            "testing"
+          ]
+        }
+      ],
+      "synthetic": true
+    },
+    {
+      "resume_id": "resume-002",
+      "candidate_id": "candidate-002",
+      "headline": "Synthetic Data Platform Engineer",
+      "summary": "Synthetic candidate profile for deterministic evaluation; scenario variant 3 emphasizes maintainable services.",
+      "skills": [
+        "data modeling",
+        "Python",
+        "databases",
+        "observability"
+      ],
+      "projects": [
+        {
+          "project_id": "project-003",
+          "title": "Synthetic service project 003",
+          "description": "Designed a synthetic service workflow with deterministic tests and measurable reliability goals.",
+          "skill_tags": [
+            "data modeling",
+            "Python"
+          ]
+        },
+        {
+          "project_id": "project-004",
+          "title": "Synthetic platform project 004",
+          "description": "Improved a synthetic platform through explicit contracts, reviewable changes, and offline validation.",
+          "skill_tags": [
+            "databases",
+            "observability"
+          ]
+        }
+      ],
+      "synthetic": true
+    },
+    {
+      "resume_id": "resume-003",
+      "candidate_id": "candidate-003",
+      "headline": "Synthetic Reliability Engineer",
+      "summary": "Synthetic candidate profile for deterministic evaluation; scenario variant 2 emphasizes maintainable services.",
+      "skills": [
+        "networks",
+        "operating systems",
+        "incident analysis",
+        "automation"
+      ],
+      "projects": [
+        {
+          "project_id": "project-005",
+          "title": "Synthetic service project 005",
+          "description": "Designed a synthetic service workflow with deterministic tests and measurable reliability goals.",
+          "skill_tags": [
+            "networks",
+            "operating systems"
+          ]
+        },
+        {
+          "project_id": "project-006",
+          "title": "Synthetic platform project 006",
+          "description": "Improved a synthetic platform through explicit contracts, reviewable changes, and offline validation.",
+          "skill_tags": [
+            "incident analysis",
+            "automation"
+          ]
+        }
+      ],
+      "synthetic": true
+    },
+    {
+      "resume_id": "resume-004",
+      "candidate_id": "candidate-004",
+      "headline": "Synthetic Python Service Engineer",
+      "summary": "Synthetic candidate profile for deterministic evaluation; scenario variant 4 emphasizes maintainable services.",
+      "skills": [
+        "Python",
+        "data structures",
+        "algorithms",
+        "software engineering"
+      ],
+      "projects": [
+        {
+          "project_id": "project-007",
+          "title": "Synthetic service project 007",
+          "description": "Designed a synthetic service workflow with deterministic tests and measurable reliability goals.",
+          "skill_tags": [
+            "Python",
+            "data structures"
+          ]
+        },
+        {
+          "project_id": "project-008",
+          "title": "Synthetic platform project 008",
+          "description": "Improved a synthetic platform through explicit contracts, reviewable changes, and offline validation.",
+          "skill_tags": [
+            "algorithms",
+            "software engineering"
+          ]
+        }
+      ],
+      "synthetic": true
+    },
+    {
+      "resume_id": "resume-005",
+      "candidate_id": "candidate-005",
+      "headline": "Synthetic Distributed Systems Engineer",
+      "summary": "Synthetic candidate profile for deterministic evaluation; scenario variant 3 emphasizes maintainable services.",
+      "skills": [
+        "system design",
+        "databases",
+        "networks",
+        "reliability"
+      ],
+      "projects": [
+        {
+          "project_id": "project-009",
+          "title": "Synthetic service project 009",
+          "description": "Designed a synthetic service workflow with deterministic tests and measurable reliability goals.",
+          "skill_tags": [
+            "system design",
+            "databases"
+          ]
+        },
+        {
+          "project_id": "project-010",
+          "title": "Synthetic platform project 010",
+          "description": "Improved a synthetic platform through explicit contracts, reviewable changes, and offline validation.",
+          "skill_tags": [
+            "networks",
+            "reliability"
+          ]
+        }
+      ],
+      "synthetic": true
+    }
+  ]
+}
