@@ -12,6 +12,7 @@ checksum_algorithm: sha256
 checksums:
   specs/ddl/v0.2.sql: sha256:a38e39455c85a66604b4e3ecb318bf70b7dbd0c467c980195a2b86d53e70c28f
   specs/events/domain-events.schema.json: sha256:5e78d6b8703fd6e264226d0671f0d9246cd97bb144c36b0cc61425a87b7eaca8
+  specs/governance/SCR-2026-001.yaml: sha256:fb04ff9ed2bdf2fd68114bf0db03d3f249a115de7941e57362aa609b4abaa154
   specs/governance/apply-protocol.md: sha256:325049b5f71ff2ce879636fb6dcb1dc235737edfa252b50bcd7976f9c33172b1
   specs/governance/archive-policy.md: sha256:c03b0eea9e9d143f096b2e115f4fdb51ba084f805083197f56124bc44184f0cb
   specs/governance/change-request-template.yaml: sha256:49c27e18f397450a16da77570ae4e95d1d591bfc9081dea8ca8f1c989875f6c4
@@ -32,7 +33,7 @@ checksums:
   specs/work-packages/wp-data-001.yaml: sha256:1a1981e72aceec44fc0d340b51e917192af5db5859ed0441a1b2a8aeff04bcde
   specs/work-packages/wp-event-001.yaml: sha256:ed60678ac27683c9e397b9c39890006df22fb47a3109cde6a424c461acf606cb
   specs/work-packages/wp-foundation-001.yaml: sha256:a08633fdd3431580f5cf9d9c471bb4c8c4e5f18abf34c7c4982815b9cb6a54fe
-  specs/work-packages/wp-foundation-002.yaml: sha256:bb4c7d861e6c42f1af696a04903144016df6d39eeead4c0bd1a7b979958be593
+  specs/work-packages/wp-foundation-002.yaml: sha256:992a0e2823e05f0b37d9a6c29359c42b1526720e3c479b0cd999680c6411c25a
   specs/work-packages/wp-foundation-003.yaml: sha256:8f0750a8bb267ee1e96ccd458d258a68216cae8e82d8704326ec65ce3f01d494
   specs/work-packages/wp-foundation-004.yaml: sha256:5e36b850d165b0d7f2b3f21e1e7b264eb09e49ea11f573a61f8c4f2bdc0c89c2
   specs/work-packages/wp-foundation-005.yaml: sha256:af9f3bc8c1c18bc42c019b1e0a46136438e23839ba07e9647ab3c4c32095ae8e

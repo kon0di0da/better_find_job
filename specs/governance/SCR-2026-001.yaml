@@ -1,0 +1,32 @@
+scr_id: SCR-2026-001
+status: APPROVED
+reason: >-
+  WP-FOUNDATION-002 的唯一依赖已完成但状态仍为 BLOCKED；其 verification 要求 make lint
+  与 make unit，而当前 Makefile 不含这些目标且不在原 path_allowlist 中，导致工作包不可执行。
+requested_by: 孙雨
+requested_at: '2026-09-02'
+impact:
+  requirements: [REQ-MOCK-001]
+  api: []
+  ddl: []
+  events: []
+  work_packages: [WP-FOUNDATION-002]
+  test_cases: [TC-STRUCT-001, TC-STARTUP-001, TC-ARCH-001]
+  mocks: []
+changes:
+  - 将 WP-FOUNDATION-002 状态从 BLOCKED 调整为 READY
+  - 将 Makefile 加入 WP-FOUNDATION-002 的输出与路径 allowlist
+  - 将结构、独立启动、领域依赖约束固化为先行测试与验收标准
+  - 补齐 make lint、make unit、make acceptance 可执行目标
+security_privacy: 不处理用户数据，不改变认证、授权、隐私或外部接口
+compatibility: backward-compatible
+version_change: patch
+approvals:
+  product: 'APPROVED: 孙雨, 2026-09-02'
+  backend: 'APPROVED: 孙雨, 2026-09-02'
+  qa: 'APPROVED: 孙雨, 2026-09-02'
+  security: 'APPROVED: 孙雨, 2026-09-02'
+migration_plan: 无数据或外部契约变更，无需迁移
+rollback_plan: 回退 SCR、WP-FOUNDATION-002 与 baseline 的对应提交
+baseline_before: 7f10ebb35eee3f4c48139fbb694fc5ed1244f5ad
+baseline_after: v0.2+SCR-2026-001

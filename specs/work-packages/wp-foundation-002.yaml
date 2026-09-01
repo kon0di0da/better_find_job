@@ -1,16 +1,33 @@
 id: WP-FOUNDATION-002
 title: Monorepo 目录
 pr: PR-1
-status: BLOCKED
+status: READY
 goal: 建立三个 FastAPI 应用与共享 package 边界且不实现业务
 depends_on: [WP-FOUNDATION-001]
-outputs: [apps/profile_service, apps/knowledge_service, apps/interview_service, packages/platform_adapters]
-path_allowlist: [apps/profile_service/**, apps/knowledge_service/**, apps/interview_service/**, packages/platform_adapters/**]
+outputs:
+  - apps/profile_service
+  - apps/knowledge_service
+  - apps/interview_service
+  - packages/platform_adapters
+  - Makefile
+path_allowlist:
+  - apps/profile_service/**
+  - apps/knowledge_service/**
+  - apps/interview_service/**
+  - packages/platform_adapters/**
+  - Makefile
 traceability:
   requirements: [REQ-MOCK-001]
-  test_cases: [TC-PORT-001]
+  test_cases: [TC-STRUCT-001, TC-STARTUP-001, TC-ARCH-001]
   mocks: [MOCK-*]
   design: ['20.1', '22.3']
-verification: [make lint, make unit]
-dod: [Domain 不依赖 adapter, 三个 app 可独立启动]
-rollback: 回退目录和构建配置
+verification: [make lint, make unit, make acceptance]
+acceptance:
+  TC-STRUCT-001: 三个服务与共享适配器包目录完整且模块可导入
+  TC-STARTUP-001: 三个 FastAPI app 可独立导入并通过 /healthz 探活
+  TC-ARCH-001: 各服务 domain 不导入 platform_adapters，服务之间无交叉导入
+dod:
+  - Domain 不依赖 adapter
+  - 三个 app 可独立启动
+  - 所有先行测试和验收命令通过
+rollback: 回退目录、测试和构建配置
