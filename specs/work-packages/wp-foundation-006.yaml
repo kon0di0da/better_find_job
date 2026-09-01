@@ -1,7 +1,7 @@
 id: WP-FOUNDATION-006
 title: Fixture loader
 pr: PR-1
-status: READY
+status: DONE
 goal: 按 seed 和 checksum 装载可重放 fixture
 depends_on: [WP-FOUNDATION-003, WP-FOUNDATION-005]
 outputs:

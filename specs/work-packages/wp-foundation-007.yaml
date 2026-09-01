@@ -1,16 +1,108 @@
 id: WP-FOUNDATION-007
 title: CI 与门禁
 pr: PR-1
-status: BLOCKED
-goal: 实现 lint、unit、spec、mock、contract、migration 和出口扫描门禁
+status: READY
+goal: 在 GitHub Actions 中实现 lint、unit、spec、mock、contract、fixture、migration 和出口扫描门禁
 depends_on: [WP-FOUNDATION-001, WP-FOUNDATION-002, WP-FOUNDATION-003, WP-FOUNDATION-004, WP-FOUNDATION-005, WP-FOUNDATION-006]
-outputs: [Makefile, .ci, tools/spec_check]
-path_allowlist: [Makefile, .ci/**, tools/spec_check/**]
+outputs:
+  - Makefile
+  - .ci/egress_scan.py
+  - .ci/egress-allowlist.yaml
+  - .github/workflows/ci.yml
+  - tests/ci
+path_allowlist:
+  - Makefile
+  - .ci/**
+  - .github/workflows/**
+  - tests/ci/**
 traceability:
   requirements: [REQ-PROFILE-001, REQ-PROFILE-002, REQ-PROFILE-003, REQ-JD-001, REQ-KNOWLEDGE-001, REQ-KNOWLEDGE-002, REQ-PLAN-001, REQ-SESSION-001, REQ-SESSION-002, REQ-ASSESS-001, REQ-ASSESS-002, REQ-ADMIN-001, REQ-MOCK-001, REQ-FIXTURE-001]
-  test_cases: [TC-MOCK-002, TC-PORT-001, TC-STATIC-001]
+  test_cases: [TC-MOCK-002, TC-PORT-001, TC-FIXTURE-001, TC-MIGRATION-001, TC-STATIC-001]
   mocks: [MOCK-*]
   design: ['23.4']
-verification: [make lint unit spec-check mock-check contract-test migration-test]
-dod: [任一子命令失败阻断合并, 证据作为 PR artifact]
-rollback: 回退 CI 配置且不得绕过 required check
+ci_contract:
+  provider: GitHub Actions
+  workflow: .github/workflows/ci.yml
+  remote_codebase_ci: forbidden
+  gates:
+    - name: lint
+      command: make lint
+    - name: unit
+      command: make unit
+    - name: spec-check
+      command: make spec-check
+    - name: mock-check
+      command: make mock-check
+    - name: contract-test
+      command: make contract-test
+    - name: fixture-test
+      command: make fixture-test
+    - name: migration-test
+      command: make migration-test
+    - name: egress-scan
+      command: make egress-scan
+  failure_policy: 任一 gate 返回非零即阻断工作流与合并；不得以 continue-on-error、waiver 或空检查静默绕过
+  database_service:
+    engine: PostgreSQL
+    minimum_version: '15'
+    test_database_url_required: true
+    database_name_must_contain: test
+  migration_environment:
+    ALLOW_DESTRUCTIVE_MIGRATION_TEST: '1'
+    TEST_DATABASE_URL: required_ci_test_database_url
+    scope: 仅 migration-test step 可使用专用测试数据库与破坏性迁移开关
+egress_scan_contract:
+  command: make egress-scan
+  implementation: .ci/egress_scan.py
+  scope: git_tracked_files
+  detectors:
+    - 常见 secret 与 access token，包括高熵凭证和已知 token/key 赋值模式
+    - PEM/OpenSSH/PGP 等私钥材料
+    - 真实邮箱地址
+    - 真实手机号
+  synthetic_data_policy: >-
+    显式标记的合成测试占位值与合成数据标记本身不得误报；排除仅作用于精确匹配的标记或值，
+    不得因目录、文件或整行被标记为 synthetic 而跳过其中其他可疑内容。
+  exception_mechanism:
+    file: .ci/egress-allowlist.yaml
+    required_fields: [rule_id, path, value_fingerprint, reason, owner, expires_at]
+    matching: exact_rule_path_and_fingerprint
+    policy: 例外必须可审计；缺字段、过期、过宽匹配或未命中规则均失败，禁止静默忽略
+  test_policy: tests/ci 使用运行时临时样本验证每类 detector 的正例、普通内容与显式合成标记负例以及 allowlist 的有效和无效场景
+artifact_contract:
+  root: runner_temporary_directory
+  required:
+    - logs/<gate>.log
+    - results/<gate>.json
+    - junit/*.xml 或其他等价机器可读测试报告
+  gate_result_fields: [gate, command, exit_code, started_at, finished_at]
+  upload_condition: always
+  policy: 成功与失败均上传；不得将生成证据、数据库内容、凭证或 secret 提交到仓库
+verification:
+  - make lint
+  - make unit
+  - make spec-check
+  - make mock-check
+  - make contract-test
+  - make fixture-test
+  - make migration-test
+  - make egress-scan
+acceptance:
+  TC-MOCK-002: make mock-check 成功；失败时返回非零并保留日志与机器可读结果
+  TC-PORT-001: make contract-test 成功；失败时返回非零并保留日志与机器可读结果
+  TC-FIXTURE-001: make fixture-test 成功；失败时返回非零并保留日志与机器可读结果
+  TC-MIGRATION-001:
+    - GitHub Actions 启动 PostgreSQL 15+ service 并提供数据库名含 test 的 TEST_DATABASE_URL
+    - migration-test step 显式设置 ALLOW_DESTRUCTIVE_MIGRATION_TEST=1 与 TEST_DATABASE_URL
+    - 未设置任一变量、数据库名不含 test 或迁移断言失败时必须返回非零
+  TC-STATIC-001:
+    - make egress-scan 扫描 git 跟踪文件并对任一未获批准的 secret、私钥、真实邮箱或手机号返回非零
+    - tests/ci 以临时样本验证各 detector 正例、普通与显式合成标记负例、allowlist 有效例外及过期或过宽例外
+    - 扫描与例外处理均生成可审计机器结果，禁止空扫描、全局排除和静默绕过
+dod:
+  - 八个 gate 均为 required 且任一失败阻断工作流与合并
+  - GitHub Actions 使用 PostgreSQL 15+ service 完成受保护的破坏性迁移测试
+  - 出口扫描及其临时正负样本和例外机制通过验收
+  - 每个 gate 的日志和 JUnit 或等价机器可读结果在成功与失败时均作为 artifact 上传
+  - 仓库不提交生成证据、测试数据库内容或凭证，不调用远程 Codebase CI
+rollback: 回退 GitHub Actions、Makefile 与 .ci 配置；不得通过关闭 required check、出口扫描或迁移保护完成回滚
