@@ -1,16 +1,48 @@
 id: WP-FOUNDATION-005
 title: Mock manifest 与适配器
 pr: PR-1
-status: BLOCKED
+status: READY
 goal: 实现 manifest 校验和登记的 Mock 壳
 depends_on: [WP-FOUNDATION-004]
-outputs: [specs/mocks, packages/platform_adapters/**/mock.py]
-path_allowlist: [specs/mocks/**, packages/platform_adapters/**/mock.py]
+outputs:
+  - specs/mocks
+  - packages/platform_adapters
+  - Makefile
+path_allowlist:
+  - specs/mocks/**
+  - packages/platform_adapters/**
+  - Makefile
 traceability:
   requirements: [REQ-MOCK-001]
   test_cases: [TC-MOCK-001, TC-MOCK-002, TC-PORT-001]
   mocks: [MOCK-*]
   design: ['23']
+contract:
+  version: '0.2'
+  fault_injection:
+    scope: adapter_instance
+    consumption: once
+    allowed: manifest.fault_scenarios
+  idempotency:
+    same_key_same_request: return_cached_result
+    same_key_different_request: IDEMPOTENCY_CONFLICT
+  fixture_policy: synthetic_minimal_only
 verification: [make mock-check, make contract-test]
-dod: [0 orphan, 0 duplicate, 0 unregistered, 声明场景全部可注入]
+acceptance:
+  TC-MOCK-001:
+    - manifest 中每个 source_path 存在且导出 adapter_class
+    - 每个 Mock 类实现登记的 Port 且 contract_version 为 0.2
+    - Mock ID 无重复、无孤儿、无未登记实现
+  TC-MOCK-002:
+    - 每个 Mock 的全部声明故障场景均可注入且单次消费
+    - TIMEOUT 映射为可重试 PORT_TIMEOUT
+    - 幂等方法满足同 key 同请求复用、异请求冲突
+  TC-PORT-001:
+    - 全部 Mock 继续满足 WP-FOUNDATION-004 的异步 Port 签名
+dod:
+  - 0 orphan
+  - 0 duplicate
+  - 0 unregistered
+  - 声明场景全部可注入
+  - 不连接任何真实外部平台
 rollback: 恢复 manifest 与对应 adapter 的同一版本

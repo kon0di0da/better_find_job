@@ -11,4 +11,4 @@
 7. 仅在依赖全部完成、Gate-SPEC=PASS 且 WP 明确为 READY 时执行；验证命令非 0 时不得继续下一 WP。
 8. 变更必须可追踪至稳定的 REQ/WP/TC/MOCK ID，并按 WP 的 rollback 执行回滚。
 
-当前执行单元：`WP-FOUNDATION-004 Port 契约`。本 WP 仅允许定义六类异步 Port、DTO、错误与能力标记及其测试，不实现具体 Adapter、Mock 或业务逻辑。
+当前执行单元：`WP-FOUNDATION-005 Mock manifest 与适配器`。本 WP 仅允许实现 Manifest 登记的 9 个确定性内存 Mock、共享故障注入及其测试，不连接真实平台，不引入 Fixture 语料或业务逻辑。

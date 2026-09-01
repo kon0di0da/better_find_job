@@ -1,7 +1,7 @@
 id: WP-FOUNDATION-004
 title: Port 契约
 pr: PR-1
-status: READY
+status: DONE
 goal: 声明六类 Port、DTO、PortError 与 capability flags
 depends_on: [WP-FOUNDATION-002]
 outputs:

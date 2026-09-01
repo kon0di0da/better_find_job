@@ -10,4 +10,4 @@
 - 不复用或改写稳定 REQ/WP/TC/MOCK ID。
 - 未经明确要求，不 push、不创建 MR。
 
-当前范围仅为 `WP-FOUNDATION-004`：六类 Port、DTO、错误与 capability flags 的声明和契约验收，不实现 Adapter。
+当前范围仅为 `WP-FOUNDATION-005`：9 个已登记 Mock、故障注入、幂等行为和 Manifest 验收，不连接真实平台。
