@@ -2,7 +2,7 @@ PYTHON ?= python3
 PYTHONPATHS := apps/profile_service:apps/knowledge_service:apps/interview_service:packages/platform_adapters
 SERVICES := profile_service knowledge_service interview_service
 
-.PHONY: spec-check lint unit acceptance migration-test contract-test
+.PHONY: spec-check lint unit acceptance migration-test contract-test mock-check
 
 spec-check:
 	$(PYTHON) tools/spec_check.py
@@ -32,3 +32,7 @@ migration-test:
 
 contract-test:
 	PYTHONPATH=packages $(PYTHON) -m pytest -q packages/contracts/ports/tests
+
+mock-check:
+	PYTHONPATH=packages:packages/platform_adapters $(PYTHON) -m pytest -q \
+		packages/platform_adapters/tests
