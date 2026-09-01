@@ -1,0 +1,16 @@
+id: WP-FOUNDATION-003
+title: 数据库迁移框架
+pr: PR-1
+status: BLOCKED
+goal: 建立三个服务 schema 与 migration up/down 骨架
+depends_on: [WP-FOUNDATION-001, WP-FOUNDATION-002]
+outputs: [migrations/profile, migrations/knowledge, migrations/interview]
+path_allowlist: [migrations/profile/**, migrations/knowledge/**, migrations/interview/**]
+traceability:
+  requirements: [REQ-PROFILE-001, REQ-PROFILE-002, REQ-PROFILE-003, REQ-KNOWLEDGE-001, REQ-KNOWLEDGE-002, REQ-PLAN-001, REQ-SESSION-001, REQ-SESSION-002, REQ-ASSESS-001, REQ-ASSESS-002]
+  test_cases: [TC-MIGRATION-001]
+  mocks: []
+  design: ['22.1']
+verification: [make migration-test]
+dod: [空库 up/down/up checksum 一致]
+rollback: 仅执行无数据损失的 down；否则恢复快照

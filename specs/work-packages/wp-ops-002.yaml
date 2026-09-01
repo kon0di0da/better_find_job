@@ -1,0 +1,16 @@
+id: WP-OPS-002
+title: Bad Case 与审计
+pr: PR-3
+status: BLOCKED
+goal: 实现 Bad Case、审计事件和脱敏管理视图
+depends_on: [WP-OPS-001]
+outputs: [apps/interview_service/admin/bad_cases, apps/interview_service/audit]
+path_allowlist: [apps/interview_service/admin/bad_cases/**, apps/interview_service/audit/**]
+traceability:
+  requirements: [REQ-ADMIN-001]
+  test_cases: [TC-ADMIN-001, TC-SEC-PII-001]
+  mocks: [MOCK-PII-001]
+  design: []
+verification: [make integration security]
+dod: [RBAC生效, 审计无PII, 重复OPEN case受唯一约束]
+rollback: 关闭管理视图；审计追加记录不回滚删除

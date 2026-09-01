@@ -1,0 +1,16 @@
+id: WP-PROFILE-002
+title: 简历修订与删除请求
+pr: PR-2
+status: BLOCKED
+goal: 实现版本化修订、乐观锁与 deletion_job 发起
+depends_on: [WP-PROFILE-001]
+outputs: [apps/profile_service/revision, apps/profile_service/deletion]
+path_allowlist: [apps/profile_service/revision/**, apps/profile_service/deletion/**]
+traceability:
+  requirements: [REQ-PROFILE-002, REQ-PROFILE-003]
+  test_cases: [TC-PROFILE-002, TC-PROFILE-003]
+  mocks: [MOCK-OBJECT-001, MOCK-PII-001]
+  design: []
+verification: [make unit integration]
+dod: [版本单调, 冲突无副作用, 删除任务含24h deadline]
+rollback: 关闭写入口；已接受 deletion_job 不回滚并继续清理

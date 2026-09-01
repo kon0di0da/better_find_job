@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec.local/schemas/assessment-report.schema.json",
+  "title": "AssessmentReport",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["assessment_id", "session_id", "status", "items", "total_score", "versions", "disclaimer"],
+  "properties": {
+    "assessment_id": {"type": "string", "format": "uuid"},
+    "session_id": {"type": "string", "format": "uuid"},
+    "status": {"enum": ["PENDING", "PUBLISHED", "NEEDS_REVIEW", "FAILED"]},
+    "items": {
+      "type": "array", "minItems": 10, "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["question_index", "status", "score", "dimensions", "evidence_refs"],
+        "properties": {
+          "question_index": {"type": "integer", "minimum": 1, "maximum": 10},
+          "status": {"enum": ["SCORED", "UNANSWERED", "NEEDS_REVIEW"]},
+          "score": {"type": "number", "minimum": 0, "maximum": 100, "multipleOf": 0.1},
+          "dimensions": {
+            "type": "object",
+            "required": ["correctness", "depth", "reasoning", "expression"],
+            "properties": {
+              "correctness": {"type": "number", "minimum": 0, "maximum": 5},
+              "depth": {"type": "number", "minimum": 0, "maximum": 5},
+              "reasoning": {"type": "number", "minimum": 0, "maximum": 5},
+              "expression": {"type": "number", "minimum": 0, "maximum": 5}
+            }
+          },
+          "evidence_refs": {"type": "array", "items": {"$ref": "evidence-ref.schema.json"}}
+        }
+      }
+    },
+    "total_score": {"type": "number", "minimum": 0, "maximum": 100, "multipleOf": 0.1},
+    "versions": {
+      "type": "object",
+      "required": ["rubric", "prompt", "model", "weight", "calculator"],
+      "properties": {
+        "rubric": {"type": "string"}, "prompt": {"type": "string"}, "model": {"type": "string"},
+        "weight": {"type": "string"}, "calculator": {"type": "string"}
+      }
+    },
+    "recompute_hash": {"type": ["string", "null"]},
+    "disclaimer": {"const": "本结果仅用于模拟面试训练反馈，不用于真实录用决策。"}
+  }
+}

@@ -1,0 +1,503 @@
+openapi: 3.1.0
+info:
+  title: Backend Interview Agent API
+  version: 0.2.0
+  x-spec-status: draft
+servers:
+  - url: /api
+security:
+  - bearerAuth: []
+tags:
+  - name: Resume
+  - name: JD
+  - name: QuestionAdmin
+  - name: Plan
+  - name: Session
+  - name: Assessment
+  - name: OpsAdmin
+paths:
+  /v1/resumes:
+    post:
+      tags: [Resume]
+      operationId: uploadResume
+      parameters: [{ $ref: '#/components/parameters/IdempotencyKey' }]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file]
+              properties:
+                file: { type: string, contentMediaType: application/octet-stream }
+      responses:
+        '202': { description: Parsing task created, content: { application/json: { schema: { $ref: '#/components/schemas/ResumeParseResult' } } } }
+        default: { $ref: '#/components/responses/Error' }
+  /v1/resumes/{resume_id}/versions/{version}:
+    get:
+      tags: [Resume]
+      operationId: getResumeVersion
+      parameters:
+        - { $ref: '#/components/parameters/ResumeId' }
+        - name: version
+          in: path
+          required: true
+          schema: { type: integer, minimum: 1 }
+      responses:
+        '200': { description: Resume version, content: { application/json: { schema: { $ref: '#/components/schemas/ResumeParseResult' } } } }
+        default: { $ref: '#/components/responses/Error' }
+  /v1/resumes/{resume_id}:
+    patch:
+      tags: [Resume]
+      operationId: reviseResume
+      parameters:
+        - { $ref: '#/components/parameters/ResumeId' }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [base_version, patch]
+              properties:
+                base_version: { type: integer, minimum: 1 }
+                patch: { type: object, minProperties: 1 }
+      responses:
+        '201': { description: New version, content: { application/json: { schema: { $ref: '#/components/schemas/ResumeParseResult' } } } }
+        default: { $ref: '#/components/responses/Error' }
+    delete:
+      tags: [Resume]
+      operationId: deleteResume
+      parameters:
+        - { $ref: '#/components/parameters/ResumeId' }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      responses:
+        '202': { description: Deletion accepted, content: { application/json: { schema: { $ref: '#/components/schemas/DeletionJob' } } } }
+        default: { $ref: '#/components/responses/Error' }
+  /v1/job-descriptions:
+    post:
+      tags: [JD]
+      operationId: createJD
+      parameters: [{ $ref: '#/components/parameters/IdempotencyKey' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [text]
+              properties:
+                text: { type: string, minLength: 1, maxLength: 50000 }
+      responses:
+        '201': { description: JD profile, content: { application/json: { schema: { $ref: '#/components/schemas/JDProfile' } } } }
+        default: { $ref: '#/components/responses/Error' }
+  /v1/job-descriptions/{jd_id}:
+    get:
+      tags: [JD]
+      operationId: getJD
+      parameters: [{ name: jd_id, in: path, required: true, schema: { type: string, format: uuid } }]
+      responses:
+        '200': { description: JD profile, content: { application/json: { schema: { $ref: '#/components/schemas/JDProfile' } } } }
+        default: { $ref: '#/components/responses/Error' }
+  /v1/admin/questions:
+    get:
+      tags: [QuestionAdmin]
+      operationId: listQuestions
+      parameters:
+        - { $ref: '#/components/parameters/Cursor' }
+        - { $ref: '#/components/parameters/PageSize' }
+      responses:
+        '200':
+          description: Question page
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items, next_cursor]
+                properties:
+                  items: { type: array, items: { $ref: '#/components/schemas/Question' } }
+                  next_cursor: { type: [string, 'null'] }
+        default: { $ref: '#/components/responses/Error' }
+    post:
+      tags: [QuestionAdmin]
+      operationId: createQuestion
+      parameters: [{ $ref: '#/components/parameters/IdempotencyKey' }]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/QuestionCreate' } } }
+      responses:
+        '201': { description: Created question, content: { application/json: { schema: { $ref: '#/components/schemas/Question' } } } }
+        default: { $ref: '#/components/responses/Error' }
+  /v1/admin/questions/{question_id}:review:
+    post:
+      tags: [QuestionAdmin]
+      operationId: reviewQuestion
+      parameters:
+        - { $ref: '#/components/parameters/QuestionId' }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [decision]
+              properties:
+                decision: { enum: [APPROVED, REJECTED] }
+                reason: { type: [string, 'null'], maxLength: 2000 }
+      responses:
+        '200': { description: Reviewed question, content: { application/json: { schema: { $ref: '#/components/schemas/Question' } } } }
+        default: { $ref: '#/components/responses/Error' }
+  /v1/admin/questions/{question_id}:disable:
+    post:
+      tags: [QuestionAdmin]
+      operationId: disableQuestion
+      parameters:
+        - { $ref: '#/components/parameters/QuestionId' }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      responses:
+        '200': { description: Disabled question, content: { application/json: { schema: { $ref: '#/components/schemas/Question' } } } }
+        default: { $ref: '#/components/responses/Error' }
+  /v1/interview-plans:
+    post:
+      tags: [Plan]
+      operationId: createInterviewPlan
+      parameters: [{ $ref: '#/components/parameters/IdempotencyKey' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [resume_version_id, jd_id, seed]
+              properties:
+                resume_version_id: { type: string, format: uuid }
+                jd_id: { type: string, format: uuid }
+                seed: { type: integer, default: 20260901 }
+      responses:
+        '201': { description: Frozen plan, content: { application/json: { schema: { $ref: '#/components/schemas/InterviewPlan' } } } }
+        default: { $ref: '#/components/responses/Error' }
+  /v1/interview-plans/{plan_id}:
+    get:
+      tags: [Plan]
+      operationId: getInterviewPlan
+      parameters: [{ name: plan_id, in: path, required: true, schema: { type: string, format: uuid } }]
+      responses:
+        '200': { description: Frozen plan, content: { application/json: { schema: { $ref: '#/components/schemas/InterviewPlan' } } } }
+        default: { $ref: '#/components/responses/Error' }
+  /v1/interview-sessions:
+    post:
+      tags: [Session]
+      operationId: createSession
+      parameters: [{ $ref: '#/components/parameters/IdempotencyKey' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [plan_id]
+              properties: { plan_id: { type: string, format: uuid } }
+      responses:
+        '201': { description: Session created, content: { application/json: { schema: { $ref: '#/components/schemas/Session' } } } }
+        default: { $ref: '#/components/responses/Error' }
+  /v1/interview-sessions/{session_id}:
+    get:
+      tags: [Session]
+      operationId: getSession
+      parameters: [{ $ref: '#/components/parameters/SessionId' }]
+      responses:
+        '200': { description: Session, content: { application/json: { schema: { $ref: '#/components/schemas/Session' } } } }
+        default: { $ref: '#/components/responses/Error' }
+  /v1/interview-sessions/{session_id}:start:
+    post: { tags: [Session], operationId: startSession, parameters: [{ $ref: '#/components/parameters/SessionId' }, { $ref: '#/components/parameters/IdempotencyKey' }], responses: { '200': { description: Started, content: { application/json: { schema: { $ref: '#/components/schemas/Session' } } } }, default: { $ref: '#/components/responses/Error' } } }
+  /v1/interview-sessions/{session_id}/answers:
+    post:
+      tags: [Session]
+      operationId: submitAnswer
+      parameters:
+        - { $ref: '#/components/parameters/SessionId' }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [question_index, text]
+              properties:
+                question_index: { type: integer, minimum: 1, maximum: 10 }
+                text: { type: string, minLength: 1, maxLength: 20000 }
+      responses:
+        '201': { description: Answer stored, content: { application/json: { schema: { $ref: '#/components/schemas/InterviewAnswer' } } } }
+        default: { $ref: '#/components/responses/Error' }
+  /v1/interview-sessions/{session_id}/skip:
+    post:
+      tags: [Session]
+      operationId: skipQuestion
+      parameters:
+        - { $ref: '#/components/parameters/SessionId' }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, additionalProperties: false, required: [question_index], properties: { question_index: { type: integer, minimum: 1, maximum: 10 } } } } }
+      responses:
+        '201': { description: Unanswered item stored, content: { application/json: { schema: { $ref: '#/components/schemas/InterviewAnswer' } } } }
+        default: { $ref: '#/components/responses/Error' }
+  /v1/interview-sessions/{session_id}:pause:
+    post: { tags: [Session], operationId: pauseSession, parameters: [{ $ref: '#/components/parameters/SessionId' }, { $ref: '#/components/parameters/IdempotencyKey' }], responses: { '200': { description: Paused, content: { application/json: { schema: { $ref: '#/components/schemas/Session' } } } }, default: { $ref: '#/components/responses/Error' } } }
+  /v1/interview-sessions/{session_id}:resume:
+    post: { tags: [Session], operationId: resumeSession, parameters: [{ $ref: '#/components/parameters/SessionId' }, { $ref: '#/components/parameters/IdempotencyKey' }], responses: { '200': { description: Resumed, content: { application/json: { schema: { $ref: '#/components/schemas/Session' } } } }, default: { $ref: '#/components/responses/Error' } } }
+  /v1/interview-sessions/{session_id}:complete:
+    post: { tags: [Session], operationId: completeSession, parameters: [{ $ref: '#/components/parameters/SessionId' }, { $ref: '#/components/parameters/IdempotencyKey' }], responses: { '202': { description: Assessment scheduled, content: { application/json: { schema: { $ref: '#/components/schemas/Session' } } } }, default: { $ref: '#/components/responses/Error' } } }
+  /v1/assessments:
+    post:
+      tags: [Assessment]
+      operationId: generateAssessment
+      parameters: [{ $ref: '#/components/parameters/IdempotencyKey' }]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, additionalProperties: false, required: [session_id], properties: { session_id: { type: string, format: uuid } } } } }
+      responses:
+        '202': { description: Assessment scheduled, content: { application/json: { schema: { $ref: '#/components/schemas/AssessmentReport' } } } }
+        default: { $ref: '#/components/responses/Error' }
+  /v1/assessments/{assessment_id}:
+    get:
+      tags: [Assessment]
+      operationId: getAssessment
+      parameters: [{ name: assessment_id, in: path, required: true, schema: { type: string, format: uuid } }]
+      responses:
+        '200': { description: Assessment, content: { application/json: { schema: { $ref: '#/components/schemas/AssessmentReport' } } } }
+        default: { $ref: '#/components/responses/Error' }
+  /v1/admin/tasks/{task_id}:retry:
+    post:
+      tags: [OpsAdmin]
+      operationId: retryTask
+      parameters:
+        - { name: task_id, in: path, required: true, schema: { type: string, format: uuid } }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      responses:
+        '202': { description: Retry accepted, content: { application/json: { schema: { $ref: '#/components/schemas/AsyncTask' } } } }
+        default: { $ref: '#/components/responses/Error' }
+  /v1/admin/bad-cases:
+    post:
+      tags: [OpsAdmin]
+      operationId: createBadCase
+      parameters: [{ $ref: '#/components/parameters/IdempotencyKey' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [session_id, category]
+              properties:
+                session_id: { type: string, format: uuid }
+                category: { enum: [PARSE, PLAN, FOLLOW_UP, ASSESSMENT, SECURITY, OTHER] }
+                note: { type: [string, 'null'], maxLength: 4000 }
+      responses:
+        '201': { description: Bad case created, content: { application/json: { schema: { type: object, required: [bad_case_id, status], properties: { bad_case_id: { type: string, format: uuid }, status: { const: OPEN } } } } } }
+        default: { $ref: '#/components/responses/Error' }
+components:
+  securitySchemes:
+    bearerAuth: { type: http, scheme: bearer, bearerFormat: JWT }
+  parameters:
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: true
+      schema: { type: string, minLength: 16, maxLength: 128, pattern: '^[A-Za-z0-9._:-]+$' }
+    Cursor: { name: cursor, in: query, schema: { type: [string, 'null'] } }
+    PageSize: { name: page_size, in: query, schema: { type: integer, minimum: 1, maximum: 100, default: 50 } }
+    ResumeId: { name: resume_id, in: path, required: true, schema: { type: string, format: uuid } }
+    QuestionId: { name: question_id, in: path, required: true, schema: { type: string, format: uuid } }
+    SessionId: { name: session_id, in: path, required: true, schema: { type: string, format: uuid } }
+  responses:
+    Error:
+      description: Error response
+      content: { application/json: { schema: { $ref: '#/components/schemas/ErrorResponse' } } }
+  schemas:
+    EvidenceRef:
+      type: object
+      additionalProperties: false
+      required: [source_type, source_id, start_offset, end_offset, quote, checksum]
+      properties:
+        source_type: { enum: [RESUME, JD, ANSWER] }
+        source_id: { type: string }
+        page_no: { type: [integer, 'null'], minimum: 1 }
+        start_offset: { type: integer, minimum: 0 }
+        end_offset: { type: integer, minimum: 1 }
+        quote: { type: string, minLength: 1 }
+        checksum: { type: string, pattern: '^sha256:[a-f0-9]{64}$' }
+    ResumeParseResult:
+      type: object
+      additionalProperties: false
+      required: [resume_id, version, status, fields, evidence, warnings]
+      properties:
+        resume_id: { type: string, format: uuid }
+        version: { type: integer, minimum: 1 }
+        status: { enum: [PENDING, SUCCEEDED, FAILED] }
+        fields: { type: object }
+        evidence: { type: array, items: { $ref: '#/components/schemas/EvidenceRef' } }
+        warnings: { type: array, items: { type: string } }
+        task_id: { type: [string, 'null'], format: uuid }
+    JDProfile:
+      type: object
+      additionalProperties: false
+      required: [jd_id, version, title, skills, evidence, warnings]
+      properties:
+        jd_id: { type: string, format: uuid }
+        version: { type: integer, minimum: 1 }
+        title: { type: [string, 'null'] }
+        skills:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [skill_id, name, level, evidence_ref]
+            properties:
+              skill_id: { type: string }
+              name: { type: string, minLength: 1 }
+              level: { enum: [MUST, PREFERRED, BONUS] }
+              evidence_ref: { $ref: '#/components/schemas/EvidenceRef' }
+        evidence: { type: array, items: { $ref: '#/components/schemas/EvidenceRef' } }
+        warnings: { type: array, items: { type: string } }
+    QuestionCreate:
+      type: object
+      additionalProperties: false
+      required: [type, stem, difficulty, skill_tags, rubric_version]
+      properties:
+        type: { enum: [PROJECT, FOUNDATION, SYSTEM_DESIGN, OPEN_LOGIC] }
+        stem: { type: string, minLength: 1, maxLength: 5000 }
+        difficulty: { enum: [JUNIOR, MID, SENIOR] }
+        skill_tags: { type: array, minItems: 1, uniqueItems: true, items: { type: string } }
+        rubric_version: { type: string }
+    Question:
+      allOf:
+        - { $ref: '#/components/schemas/QuestionCreate' }
+        - type: object
+          required: [question_id, version, review_status, enabled]
+          properties:
+            question_id: { type: string, format: uuid }
+            version: { type: integer, minimum: 1 }
+            review_status: { enum: [PENDING, APPROVED, REJECTED] }
+            enabled: { type: boolean }
+    InterviewPlan:
+      type: object
+      additionalProperties: false
+      required: [plan_id, status, seed, allocation, items, constraint_report]
+      properties:
+        plan_id: { type: string, format: uuid }
+        status: { enum: [DRAFT, READY, FAILED] }
+        seed: { type: integer }
+        allocation:
+          type: object
+          required: [PROJECT, FOUNDATION, SYSTEM_DESIGN, OPEN_LOGIC]
+          properties: { PROJECT: { const: 4 }, FOUNDATION: { const: 3 }, SYSTEM_DESIGN: { const: 2 }, OPEN_LOGIC: { const: 1 } }
+        items:
+          type: array
+          minItems: 10
+          maxItems: 10
+          items:
+            type: object
+            required: [sequence, question]
+            properties:
+              sequence: { type: integer, minimum: 1, maximum: 10 }
+              question: { $ref: '#/components/schemas/Question' }
+              project_id: { type: [string, 'null'] }
+              evidence_refs: { type: array, items: { $ref: '#/components/schemas/EvidenceRef' } }
+        constraint_report: { type: object }
+    InterviewAnswer:
+      type: object
+      additionalProperties: false
+      required: [answer_id, session_id, question_index, kind, status, text, created_at]
+      properties:
+        answer_id: { type: string, format: uuid }
+        session_id: { type: string, format: uuid }
+        question_index: { type: integer, minimum: 1, maximum: 10 }
+        kind: { enum: [MAIN, FOLLOW_UP] }
+        status: { enum: [ANSWERED, UNANSWERED] }
+        text: { type: [string, 'null'] }
+        follow_up: { type: [string, 'null'] }
+        created_at: { type: string, format: date-time }
+    AssessmentReport:
+      type: object
+      additionalProperties: false
+      required: [assessment_id, session_id, status, items, total_score, versions, disclaimer]
+      properties:
+        assessment_id: { type: string, format: uuid }
+        session_id: { type: string, format: uuid }
+        status: { enum: [PENDING, PUBLISHED, NEEDS_REVIEW, FAILED] }
+        items:
+          type: array
+          minItems: 10
+          maxItems: 10
+          items:
+            type: object
+            required: [question_index, status, score, dimensions, evidence_refs]
+            properties:
+              question_index: { type: integer, minimum: 1, maximum: 10 }
+              status: { enum: [SCORED, UNANSWERED, NEEDS_REVIEW] }
+              score: { type: number, minimum: 0, maximum: 100, multipleOf: 0.1 }
+              dimensions:
+                type: object
+                required: [correctness, depth, reasoning, expression]
+                properties:
+                  correctness: { type: number, minimum: 0, maximum: 5 }
+                  depth: { type: number, minimum: 0, maximum: 5 }
+                  reasoning: { type: number, minimum: 0, maximum: 5 }
+                  expression: { type: number, minimum: 0, maximum: 5 }
+              evidence_refs: { type: array, items: { $ref: '#/components/schemas/EvidenceRef' } }
+        total_score: { type: number, minimum: 0, maximum: 100, multipleOf: 0.1 }
+        versions:
+          type: object
+          required: [rubric, prompt, model, weight, calculator]
+          properties:
+            rubric: { type: string }
+            prompt: { type: string }
+            model: { type: string }
+            weight: { type: string }
+            calculator: { type: string }
+        recompute_hash: { type: [string, 'null'] }
+        disclaimer: { const: 本结果仅用于模拟面试训练反馈，不用于真实录用决策。 }
+    Session:
+      type: object
+      required: [session_id, plan_id, state, state_version, current_index]
+      properties:
+        session_id: { type: string, format: uuid }
+        plan_id: { type: string, format: uuid }
+        state: { enum: [DRAFT, READY, IN_PROGRESS, PAUSED, COMPLETED, FAILED, CANCELLED] }
+        state_version: { type: integer, minimum: 0 }
+        current_index: { type: integer, minimum: 0, maximum: 10 }
+    DeletionJob:
+      type: object
+      required: [deletion_job_id, status, deadline_at]
+      properties:
+        deletion_job_id: { type: string, format: uuid }
+        status: { enum: [PENDING, RUNNING, COMPLETED, FAILED] }
+        deadline_at: { type: string, format: date-time }
+    AsyncTask:
+      type: object
+      required: [task_id, status, attempt]
+      properties:
+        task_id: { type: string, format: uuid }
+        status: { enum: [PENDING, RUNNING, SUCCEEDED, FAILED, DEAD_LETTER] }
+        attempt: { type: integer, minimum: 0, maximum: 3 }
+    ErrorResponse:
+      type: object
+      additionalProperties: false
+      required: [code, message, retryable, trace_id]
+      properties:
+        code: { type: string, pattern: '^[A-Z][A-Z0-9_]+$' }
+        message: { type: string }
+        retryable: { type: boolean }
+        trace_id: { type: string }
+        details: { type: object }

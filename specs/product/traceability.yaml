@@ -1,0 +1,73 @@
+spec_version: '0.2'
+status: Accepted
+entries:
+  - requirement_id: REQ-PROFILE-001
+    work_packages: [WP-PROFILE-001]
+    test_cases: [TC-PROFILE-001, TC-SEC-FILE-001, TC-E2E-001]
+    mocks: [MOCK-RESUME-001, MOCK-OBJECT-001]
+    implementation_paths: [specs/work-packages/wp-profile-001.yaml]
+  - requirement_id: REQ-PROFILE-002
+    work_packages: [WP-PROFILE-002]
+    test_cases: [TC-PROFILE-002, TC-IDEMPOTENCY-001]
+    mocks: []
+    implementation_paths: [specs/work-packages/wp-profile-002.yaml]
+  - requirement_id: REQ-PROFILE-003
+    work_packages: [WP-PROFILE-002, WP-DATA-001]
+    test_cases: [TC-PROFILE-003, TC-RETENTION-001]
+    mocks: [MOCK-OBJECT-001, MOCK-PII-001]
+    implementation_paths: [specs/work-packages/wp-profile-002.yaml, specs/work-packages/wp-data-001.yaml]
+  - requirement_id: REQ-JD-001
+    work_packages: [WP-JD-001]
+    test_cases: [TC-JD-001, TC-E2E-001]
+    mocks: [MOCK-MODEL-JD-001]
+    implementation_paths: [specs/work-packages/wp-jd-001.yaml]
+  - requirement_id: REQ-KNOWLEDGE-001
+    work_packages: [WP-KNOWLEDGE-001]
+    test_cases: [TC-KNOWLEDGE-001, TC-AUTHZ-001]
+    mocks: [MOCK-KNOWLEDGE-001]
+    implementation_paths: [specs/work-packages/wp-knowledge-001.yaml]
+  - requirement_id: REQ-KNOWLEDGE-002
+    work_packages: [WP-KNOWLEDGE-001]
+    test_cases: [TC-KNOWLEDGE-002, TC-EVENT-001]
+    mocks: [MOCK-KNOWLEDGE-001]
+    implementation_paths: [specs/work-packages/wp-knowledge-001.yaml]
+  - requirement_id: REQ-PLAN-001
+    work_packages: [WP-PLAN-001]
+    test_cases: [TC-PLAN-001, TC-PLAN-002, TC-AI-GOLD-001]
+    mocks: [MOCK-KNOWLEDGE-001, MOCK-MODEL-PLAN-001]
+    implementation_paths: [specs/work-packages/wp-plan-001.yaml]
+  - requirement_id: REQ-SESSION-001
+    work_packages: [WP-SESSION-001]
+    test_cases: [TC-SESSION-001, TC-SESSION-002, TC-IDEMPOTENCY-001]
+    mocks: [MOCK-MODEL-FOLLOWUP-001]
+    implementation_paths: [specs/work-packages/wp-session-001.yaml]
+  - requirement_id: REQ-SESSION-002
+    work_packages: [WP-SESSION-001]
+    test_cases: [TC-SESSION-003, TC-STATE-001, TC-STATE-002, TC-EVENT-001, TC-EVENT-002]
+    mocks: []
+    implementation_paths: [specs/work-packages/wp-session-001.yaml]
+  - requirement_id: REQ-ASSESS-001
+    work_packages: [WP-ASSESS-001]
+    test_cases: [TC-ASSESS-001, TC-AI-GOLD-001]
+    mocks: [MOCK-MODEL-ASSESS-001, MOCK-AGENTOPS-001]
+    implementation_paths: [specs/work-packages/wp-assess-001.yaml]
+  - requirement_id: REQ-ASSESS-002
+    work_packages: [WP-ASSESS-001]
+    test_cases: [TC-ASSESS-002, TC-E2E-001]
+    mocks: [MOCK-MODEL-ASSESS-001, MOCK-AGENTOPS-001]
+    implementation_paths: [specs/work-packages/wp-assess-001.yaml]
+  - requirement_id: REQ-ADMIN-001
+    work_packages: [WP-OPS-001, WP-OPS-002]
+    test_cases: [TC-ADMIN-001, TC-AUTHZ-001, TC-SEC-PII-001]
+    mocks: [MOCK-PII-001, MOCK-AGENTOPS-001]
+    implementation_paths: [specs/work-packages/wp-ops-001.yaml, specs/work-packages/wp-ops-002.yaml]
+  - requirement_id: REQ-MOCK-001
+    work_packages: [WP-FOUNDATION-004, WP-FOUNDATION-005, WP-FOUNDATION-007, WP-SECURITY-001]
+    test_cases: [TC-MOCK-001, TC-MOCK-002, TC-PORT-001, TC-STATIC-001]
+    mocks: [MOCK-RESUME-001, MOCK-MODEL-JD-001, MOCK-MODEL-PLAN-001, MOCK-MODEL-FOLLOWUP-001, MOCK-MODEL-ASSESS-001, MOCK-KNOWLEDGE-001, MOCK-AGENTOPS-001, MOCK-OBJECT-001, MOCK-PII-001]
+    implementation_paths: [specs/work-packages/wp-foundation-004.yaml, specs/work-packages/wp-foundation-005.yaml, specs/work-packages/wp-foundation-007.yaml, specs/work-packages/wp-security-001.yaml]
+  - requirement_id: REQ-FIXTURE-001
+    work_packages: [WP-FOUNDATION-006]
+    test_cases: [TC-FIXTURE-001, TC-AI-GOLD-001]
+    mocks: [MOCK-RESUME-001, MOCK-MODEL-JD-001, MOCK-MODEL-PLAN-001, MOCK-MODEL-FOLLOWUP-001, MOCK-MODEL-ASSESS-001, MOCK-KNOWLEDGE-001, MOCK-AGENTOPS-001, MOCK-OBJECT-001, MOCK-PII-001]
+    implementation_paths: [specs/work-packages/wp-foundation-006.yaml]

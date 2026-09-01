@@ -1,0 +1,16 @@
+id: WP-DATA-001
+title: 删除补偿与保留期
+pr: PR-3
+status: BLOCKED
+goal: 执行 24h 物理删除、派生清理、补偿和 180 天墓碑
+depends_on: [WP-PROFILE-002, WP-OPS-001]
+outputs: [apps/profile_service/deletion_worker]
+path_allowlist: [apps/profile_service/deletion_worker/**]
+traceability:
+  requirements: [REQ-PROFILE-003]
+  test_cases: [TC-PROFILE-003, TC-RETENTION-001]
+  mocks: [MOCK-OBJECT-001, MOCK-PII-001]
+  design: []
+verification: [make integration security]
+dod: [四路回执齐全, 24h SLA告警, 墓碑无PII]
+rollback: 删除不可恢复；失败仅补偿继续且不得恢复已删PII

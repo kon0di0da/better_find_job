@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec.local/mocks/manifest.schema.json",
+  "title": "MockManifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["manifest_version", "mocks"],
+  "properties": {
+    "manifest_version": {"const": "0.2"},
+    "mocks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/mock"}
+    }
+  },
+  "$defs": {
+    "mock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mock_id", "adapter_class", "source_path", "port", "contract_version", "fixture_version", "owner", "status", "replacement_target", "replacement_pr", "fault_scenarios"],
+      "properties": {
+        "mock_id": {"type": "string", "pattern": "^MOCK-[A-Z0-9]+(?:-[A-Z0-9]+)*-[0-9]{3}$"},
+        "adapter_class": {"type": "string", "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"},
+        "source_path": {"type": "string", "pattern": "^packages/platform_adapters/"},
+        "port": {"enum": ["ResumeParserPort", "ModelGatewayPort", "KnowledgeSearchPort", "AgentOpsPort", "ObjectStoragePort", "PIIRedactorPort"]},
+        "contract_version": {"type": "string", "minLength": 1},
+        "fixture_version": {"type": "string", "minLength": 1},
+        "owner": {"type": "string", "minLength": 1},
+        "status": {"enum": ["ACTIVE", "REPLACING", "REPLACED", "DISABLED"]},
+        "replacement_target": {"type": ["string", "null"]},
+        "replacement_pr": {"type": ["string", "null"], "pattern": "^PR-[0-9A-Z-]+$"},
+        "fault_scenarios": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"enum": ["TIMEOUT", "UNAVAILABLE", "RATE_LIMITED", "INVALID_INPUT", "INVALID_OUTPUT", "EMPTY_RESULT", "PARTIAL_RESULT", "CHECKSUM_MISMATCH", "DELETE_FAILED", "DUPLICATE_OUTPUT", "PII_MISS", "PII_FALSE_POSITIVE", "QUOTA_EXCEEDED", "HALLUCINATION", "TRACE_DROPPED", "VERSION_MISSING"]}
+        }
+      }
+    }
+  }
+}

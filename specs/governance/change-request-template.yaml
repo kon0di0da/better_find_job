@@ -1,0 +1,24 @@
+scr_id: SCR-YYYY-NNN
+status: PROPOSED
+reason: REQUIRED
+requested_by: REQUIRED
+impact:
+  requirements: []
+  api: []
+  ddl: []
+  events: []
+  work_packages: []
+  test_cases: []
+  mocks: []
+security_privacy: REQUIRED
+compatibility: backward-compatible | breaking | none
+version_change: major | minor | patch
+approvals:
+  product: PENDING
+  backend: PENDING
+  qa: PENDING
+  security: PENDING
+migration_plan: REQUIRED_IF_DATA_OR_CONTRACT_CHANGES
+rollback_plan: REQUIRED
+baseline_before: REQUIRED
+baseline_after: REQUIRED_AFTER_APPROVAL

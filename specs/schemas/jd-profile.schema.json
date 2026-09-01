@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec.local/schemas/jd-profile.schema.json",
+  "title": "JDProfile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["jd_id", "version", "title", "skills", "evidence", "warnings"],
+  "properties": {
+    "jd_id": {"type": "string", "format": "uuid"},
+    "version": {"type": "integer", "minimum": 1},
+    "title": {"type": ["string", "null"]},
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["skill_id", "name", "level", "evidence_ref"],
+        "properties": {
+          "skill_id": {"type": "string"},
+          "name": {"type": "string", "minLength": 1},
+          "level": {"enum": ["MUST", "PREFERRED", "BONUS"]},
+          "evidence_ref": {"$ref": "evidence-ref.schema.json"}
+        }
+      }
+    },
+    "evidence": {"type": "array", "items": {"$ref": "evidence-ref.schema.json"}},
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  }
+}

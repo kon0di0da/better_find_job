@@ -1,0 +1,16 @@
+id: WP-FOUNDATION-006
+title: Fixture loader
+pr: PR-1
+status: BLOCKED
+goal: 按 seed 和 checksum 装载可重放 fixture
+depends_on: [WP-FOUNDATION-003, WP-FOUNDATION-005]
+outputs: [fixtures/mvp-fixture-v1, tools/fixture_loader]
+path_allowlist: [fixtures/mvp-fixture-v1/**, tools/fixture_loader/**]
+traceability:
+  requirements: [REQ-FIXTURE-001]
+  test_cases: [TC-FIXTURE-001]
+  mocks: [MOCK-*]
+  design: ['13', '23']
+verification: [make fixture-test]
+dod: [两次冷启动的 ID 顺序响应和 checksum 相同]
+rollback: 删除新 dataset_version，旧 fixture 不覆盖

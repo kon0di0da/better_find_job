@@ -1,0 +1,16 @@
+id: WP-SECURITY-001
+title: 权限、文件与出口门禁
+pr: PR-3
+status: BLOCKED
+goal: 落实 RBAC、恶意文件、PII 日志扫描和网络出口白名单
+depends_on: [WP-OPS-002, WP-EVENT-001]
+outputs: [security, .ci/security]
+path_allowlist: [security/**, .ci/security/**]
+traceability:
+  requirements: [REQ-PROFILE-001, REQ-ADMIN-001, REQ-MOCK-001]
+  test_cases: [TC-AUTHZ-001, TC-SEC-FILE-001, TC-SEC-PII-001, TC-STATIC-001]
+  mocks: [MOCK-PII-001]
+  design: []
+verification: [make security static]
+dod: [越权恶意文件PII命中和未登记出网均阻断]
+rollback: 安全门禁不得降级；回滚业务变更而非关闭检查

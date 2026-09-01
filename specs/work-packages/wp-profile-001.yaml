@@ -1,0 +1,16 @@
+id: WP-PROFILE-001
+title: 简历入口与任务
+pr: PR-2
+status: BLOCKED
+goal: 实现同步文件校验、异步解析、查询与失败边界
+depends_on: [WP-FOUNDATION-007]
+outputs: [apps/profile_service/resume]
+path_allowlist: [apps/profile_service/resume/**]
+traceability:
+  requirements: [REQ-PROFILE-001]
+  test_cases: [TC-PROFILE-001, TC-SEC-FILE-001]
+  mocks: [MOCK-RESUME-001, MOCK-OBJECT-001]
+  design: ['20.1', '21', '22']
+verification: [make unit contract-test integration]
+dod: [入口拒绝不建任务, 依赖失败任务为 FAILED 且可重试]
+rollback: 关闭路由 flag；回退 migration 前确认无新增数据

@@ -1,0 +1,16 @@
+id: WP-ASSESS-001
+title: 评分与报告
+pr: PR-2
+status: BLOCKED
+goal: 实现逐题评分、证据校验、确定性复算和报告读取
+depends_on: [WP-SESSION-001]
+outputs: [apps/interview_service/assessment]
+path_allowlist: [apps/interview_service/assessment/**]
+traceability:
+  requirements: [REQ-ASSESS-001, REQ-ASSESS-002]
+  test_cases: [TC-ASSESS-001, TC-ASSESS-002, TC-AI-GOLD-001]
+  mocks: [MOCK-MODEL-ASSESS-001, MOCK-AGENTOPS-001]
+  design: []
+verification: [make unit contract-test integration e2e]
+dod: [10题等权, 默认维度40/25/20/15, 无引用NEEDS_REVIEW, 复算一致]
+rollback: 关闭发布 flag；已发布报告保留版本且不覆盖

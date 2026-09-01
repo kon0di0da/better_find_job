@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec.local/schemas/interview-answer.schema.json",
+  "title": "InterviewAnswer",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["answer_id", "session_id", "question_index", "kind", "status", "text", "created_at"],
+  "properties": {
+    "answer_id": {"type": "string", "format": "uuid"},
+    "session_id": {"type": "string", "format": "uuid"},
+    "question_index": {"type": "integer", "minimum": 1, "maximum": 10},
+    "kind": {"enum": ["MAIN", "FOLLOW_UP"]},
+    "status": {"enum": ["ANSWERED", "UNANSWERED"]},
+    "text": {"type": ["string", "null"]},
+    "follow_up": {"type": ["string", "null"]},
+    "created_at": {"type": "string", "format": "date-time"}
+  }
+}

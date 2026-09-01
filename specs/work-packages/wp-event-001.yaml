@@ -1,0 +1,16 @@
+id: WP-EVENT-001
+title: Outbox/Inbox
+pr: PR-3
+status: BLOCKED
+goal: 实现事件至少一次、去重、乱序处理与死信
+depends_on: [WP-PROFILE-002, WP-KNOWLEDGE-001, WP-PLAN-001, WP-SESSION-001, WP-ASSESS-001]
+outputs: [packages/events, apps/profile_service/outbox, apps/profile_service/inbox, apps/knowledge_service/outbox, apps/knowledge_service/inbox, apps/interview_service/outbox, apps/interview_service/inbox]
+path_allowlist: [packages/events/**, apps/*/outbox/**, apps/*/inbox/**]
+traceability:
+  requirements: [REQ-PROFILE-002, REQ-PROFILE-003, REQ-KNOWLEDGE-002, REQ-PLAN-001, REQ-SESSION-001, REQ-SESSION-002, REQ-ASSESS-001, REQ-ASSESS-002]
+  test_cases: [TC-EVENT-001, TC-EVENT-002]
+  mocks: [MOCK-*]
+  design: ['22.2']
+verification: [make contract-test integration]
+dod: [重复无副作用, 乱序按aggregate_version处理, 死信可审计重放]
+rollback: 停发布器并保留 outbox；不得丢弃未发布事件

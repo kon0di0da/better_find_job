@@ -1,0 +1,16 @@
+id: WP-JD-001
+title: JD 结构化
+pr: PR-2
+status: BLOCKED
+goal: 创建和读取 JD，并实现无技能 warning 行为
+depends_on: [WP-FOUNDATION-007]
+outputs: [apps/profile_service/jd]
+path_allowlist: [apps/profile_service/jd/**]
+traceability:
+  requirements: [REQ-JD-001]
+  test_cases: [TC-JD-001]
+  mocks: [MOCK-MODEL-JD-001]
+  design: ['20.1', '21']
+verification: [make unit contract-test integration]
+dod: [证据可定位, 无技能返回空数组与 warning]
+rollback: 关闭 JD 路由并保留已写版本只读

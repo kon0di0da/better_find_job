@@ -1,0 +1,101 @@
+manifest_version: '0.2'
+mocks:
+  - mock_id: MOCK-RESUME-001
+    adapter_class: MockResumeParser
+    source_path: packages/platform_adapters/resume/mock.py
+    port: ResumeParserPort
+    contract_version: '0.2'
+    fixture_version: mvp-fixture-v1
+    owner: backend-profile
+    status: ACTIVE
+    replacement_target: resume-parser-provider
+    replacement_pr: PR-4C
+    fault_scenarios: [TIMEOUT, INVALID_INPUT, PARTIAL_RESULT]
+  - mock_id: MOCK-MODEL-JD-001
+    adapter_class: MockModelGatewayJD
+    source_path: packages/platform_adapters/model/mock_jd.py
+    port: ModelGatewayPort
+    contract_version: '0.2'
+    fixture_version: mvp-fixture-v1
+    owner: backend-interview
+    status: ACTIVE
+    replacement_target: model-gateway-fornax
+    replacement_pr: PR-4A
+    fault_scenarios: [TIMEOUT, INVALID_OUTPUT, EMPTY_RESULT]
+  - mock_id: MOCK-MODEL-PLAN-001
+    adapter_class: MockModelGatewayPlan
+    source_path: packages/platform_adapters/model/mock_plan.py
+    port: ModelGatewayPort
+    contract_version: '0.2'
+    fixture_version: mvp-fixture-v1
+    owner: backend-interview
+    status: ACTIVE
+    replacement_target: model-gateway-fornax
+    replacement_pr: PR-4A
+    fault_scenarios: [TIMEOUT, INVALID_OUTPUT, HALLUCINATION]
+  - mock_id: MOCK-MODEL-FOLLOWUP-001
+    adapter_class: MockModelGatewayFollowUp
+    source_path: packages/platform_adapters/model/mock_followup.py
+    port: ModelGatewayPort
+    contract_version: '0.2'
+    fixture_version: mvp-fixture-v1
+    owner: backend-interview
+    status: ACTIVE
+    replacement_target: model-gateway-fornax
+    replacement_pr: PR-4A
+    fault_scenarios: [TIMEOUT, INVALID_OUTPUT, DUPLICATE_OUTPUT]
+  - mock_id: MOCK-MODEL-ASSESS-001
+    adapter_class: MockModelGatewayAssess
+    source_path: packages/platform_adapters/model/mock_assess.py
+    port: ModelGatewayPort
+    contract_version: '0.2'
+    fixture_version: mvp-fixture-v1
+    owner: backend-interview
+    status: ACTIVE
+    replacement_target: model-gateway-fornax
+    replacement_pr: PR-4A
+    fault_scenarios: [TIMEOUT, INVALID_OUTPUT]
+  - mock_id: MOCK-KNOWLEDGE-001
+    adapter_class: MockKnowledgeSearch
+    source_path: packages/platform_adapters/knowledge/mock.py
+    port: KnowledgeSearchPort
+    contract_version: '0.2'
+    fixture_version: mvp-fixture-v1
+    owner: backend-knowledge
+    status: ACTIVE
+    replacement_target: ByteRAG-VikingDB
+    replacement_pr: PR-4B
+    fault_scenarios: [UNAVAILABLE, EMPTY_RESULT]
+  - mock_id: MOCK-AGENTOPS-001
+    adapter_class: MockAgentOps
+    source_path: packages/platform_adapters/agentops/mock.py
+    port: AgentOpsPort
+    contract_version: '0.2'
+    fixture_version: mvp-fixture-v1
+    owner: backend-platform
+    status: ACTIVE
+    replacement_target: Fornax
+    replacement_pr: PR-4A
+    fault_scenarios: [TIMEOUT, TRACE_DROPPED, VERSION_MISSING]
+  - mock_id: MOCK-OBJECT-001
+    adapter_class: MockObjectStorage
+    source_path: packages/platform_adapters/storage/mock.py
+    port: ObjectStoragePort
+    contract_version: '0.2'
+    fixture_version: mvp-fixture-v1
+    owner: backend-profile
+    status: ACTIVE
+    replacement_target: object-storage-provider
+    replacement_pr: PR-4C
+    fault_scenarios: [QUOTA_EXCEEDED, DELETE_FAILED, CHECKSUM_MISMATCH]
+  - mock_id: MOCK-PII-001
+    adapter_class: MockPIIRedactor
+    source_path: packages/platform_adapters/pii/mock.py
+    port: PIIRedactorPort
+    contract_version: '0.2'
+    fixture_version: mvp-fixture-v1
+    owner: security
+    status: ACTIVE
+    replacement_target: pii-redaction-provider
+    replacement_pr: PR-4C
+    fault_scenarios: [TIMEOUT, PII_MISS, PII_FALSE_POSITIVE]

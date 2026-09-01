@@ -1,0 +1,16 @@
+id: WP-OPS-001
+title: 管理查询与重试
+pr: PR-3
+status: BLOCKED
+goal: 实现任务查询、最多三次自动重试、人工重试和死信重放
+depends_on: [WP-ASSESS-001]
+outputs: [apps/interview_service/admin/tasks]
+path_allowlist: [apps/interview_service/admin/tasks/**]
+traceability:
+  requirements: [REQ-ADMIN-001]
+  test_cases: [TC-ADMIN-001, TC-EVENT-001]
+  mocks: [MOCK-*]
+  design: []
+verification: [make integration security]
+dod: [非FAILED拒绝, 重放保留event_id, 所有动作有审计]
+rollback: 禁用管理命令且不删除任务历史

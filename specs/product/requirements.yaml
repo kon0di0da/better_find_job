@@ -1,0 +1,105 @@
+spec_version: '0.2'
+status: Accepted
+priority: P0
+requirements:
+  - id: REQ-PROFILE-001
+    title: 简历上传与解析
+    trigger: 候选人提交 PDF 或 DOCX 简历
+    inputs: [file, Idempotency-Key]
+    outputs: [resume_id, version, structured_fields, evidence_refs, parse_status, latency]
+    rules:
+      - 文件大小必须大于 0 且不超过 10MB
+      - 非空事实字段必须有可定位证据
+      - 入口校验失败不得创建任务；入口后解析失败创建 FAILED 任务
+    acceptance: [PDF/DOCX 可解析, 10MB 接受且 10MB+1B 返回 413, p95不超过30秒, Gold Case字段准确率不低于90%]
+  - id: REQ-PROFILE-002
+    title: 修订与版本化
+    trigger: 候选人修正解析字段并保存
+    inputs: [resume_id, base_version, patch, Idempotency-Key]
+    outputs: [new_version, diff, revised_by, revised_at]
+    rules: [历史版本不可覆盖, 版本单调递增, base_version乐观锁, 用户修订保留原证据]
+    acceptance: [连续有效修订产生v2和v3, 旧版本可读, 并发冲突无副作用]
+  - id: REQ-PROFILE-003
+    title: 删除与派生清理
+    trigger: 候选人删除简历或账号 erase 命令
+    inputs: [subject_id, resume_id, scope, Idempotency-Key]
+    outputs: [deletion_job_id, status, cleanup_summary]
+    rules: [清理主库对象存储索引缓存和派生事实, 审计墓碑不得含PII, 删除任务幂等可重试]
+    acceptance: [四路核验不可读取PII, 审计可证明发起人时间和结果]
+  - id: REQ-JD-001
+    title: JD 解析与证据
+    trigger: 候选人提交目标 JD 文本
+    inputs: [text, Idempotency-Key]
+    outputs: [jd_id, version, job_profile, skills, evidence_refs]
+    rules: [文本长度1至50000字符, 技能等级仅MUST/PREFERRED/BONUS, 不虚构技能]
+    acceptance: [技能枚举合法, 证据区间可定位, 无技能返回空结果和warning, p95不超过10秒]
+  - id: REQ-KNOWLEDGE-001
+    title: 审核题库
+    trigger: 内容管理员导入创建审核或停用题目
+    inputs: [stem, type, skill_tags, language_tags, difficulty, rubric, source, review_action]
+    outputs: [question_id, version, review_status, enabled]
+    rules: [至少100道已审核fixture题, 仅APPROVED且enabled题可进入计划, 已生成计划保留快照]
+    acceptance: [资格查询只包含有效审核版本, 八类主题均至少一题]
+  - id: REQ-KNOWLEDGE-002
+    title: 相似题合并队列
+    trigger: 题目新增或版本发布
+    inputs: [question_id, stem, tags, similarity_threshold]
+    outputs: [merge_case_id, candidate_pair, similarity, status]
+    rules: [相似题进入人工队列, 不自动删除或合并, 重复检测不生成重复OPEN项]
+    acceptance: [fixture命中时生成唯一队列项]
+  - id: REQ-PLAN-001
+    title: 固定 10 题计划
+    trigger: 候选人选定简历和 JD 版本后请求计划
+    inputs: [candidate_id, resume_version_id, jd_version_id, seed, Idempotency-Key]
+    outputs: [plan_id, question_snapshots, evidence_refs, constraint_report]
+    rules: [配额固定4/3/2/1, 至少7题关联JD技能, 4道项目题关联project_id和简历证据, 只用已审核启用题, READY后不重排]
+    acceptance: [题数为10, JD关联数至少7, 项目关联数为4, 约束不足返回PLAN_CONSTRAINT_UNSATISFIED]
+  - id: REQ-SESSION-001
+    title: 逐题回答与一次追问
+    trigger: 候选人开始会话并提交答案或跳过
+    inputs: [session_id, question_index, answer_text_or_skip, Idempotency-Key]
+    outputs: [answer_id, save_result, follow_up, next_position]
+    rules: [按题序推进, 每道主问题最多一次追问, 跳过记录未作答, 提交幂等]
+    acceptance: [10题可完成, 第二次追问被拒绝, 重复请求只有一次副作用]
+  - id: REQ-SESSION-002
+    title: 暂停恢复与完成锁定
+    trigger: 暂停恢复取消完成或失败恢复
+    inputs: [session_id, expected_state, command, Idempotency-Key]
+    outputs: [state, state_version, timestamp]
+    rules: [状态枚举固定, 迁移使用乐观锁, COMPLETED和CANCELLED为终态, 完成后答案锁定]
+    acceptance: [合法边可达, 非法边409且无副作用, 暂停恢复到原题]
+  - id: REQ-ASSESS-001
+    title: 可解释逐题评分
+    trigger: 会话完成后启动评估
+    inputs: [plan_snapshot, answers, rubric_version, prompt_version, model_version]
+    outputs: [dimension_scores, item_score, answer_quotes, rationale, advice, status]
+    rules: [非零评分至少一个精确回答引用, 未作答得0分, 无证据评分不得发布]
+    acceptance: [已答题均有可定位引用理由和建议, 未答题严格输出未作答]
+  - id: REQ-ASSESS-002
+    title: 总分复算与用途声明
+    trigger: 逐题评分完成或管理员复算
+    inputs: [ten_item_scores, weight_version]
+    outputs: [total_score, dimension_summary, recompute_hash, versions, disclaimer]
+    rules: [总分由持久化题分计算, 相同输入逐位一致, 权重变化创建新版本, 固定用途声明]
+    acceptance: [离线复算等于API总分, 报告含rubric/prompt/model/weight版本]
+  - id: REQ-ADMIN-001
+    title: 管理操作与运行观测
+    trigger: 授权管理员使用管理端或管理 API
+    inputs: [filters, admin_command, Idempotency-Key]
+    outputs: [questions, prompt_versions, sessions, tasks, audits, metrics]
+    rules: [所有写操作审计, 敏感字段默认脱敏, 未授权返回403]
+    acceptance: [管理能力通过权限与审计核验]
+  - id: REQ-MOCK-001
+    title: Mock 集中登记与代码追踪
+    trigger: 新增修改或替换外部能力适配器
+    inputs: [mock_id, port, adapter, fixture, faults, replacement_target, replacement_pr]
+    outputs: [mock_register, manifest]
+    rules: [Mock必须登记且ID不复用, 实现必须可由manifest定位, CI双向校验]
+    acceptance: [0 orphan, 0 duplicate, 0 unregistered adapter]
+  - id: REQ-FIXTURE-001
+    title: 可重放 Mock 数据集
+    trigger: 本地CI或评测环境装载测试数据
+    inputs: [dataset_version, seed, scenario_profile]
+    outputs: [fixed_id_resumes, jds, questions, gold_cases, checksum_manifest]
+    rules: [默认5简历10JD至少100题30Gold Case, 默认seed为20260901, 已发布fixture不可覆盖]
+    acceptance: [两次冷启动manifest与核心输出完全一致]

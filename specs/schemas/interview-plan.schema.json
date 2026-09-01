@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec.local/schemas/interview-plan.schema.json",
+  "title": "InterviewPlan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["plan_id", "status", "seed", "allocation", "items", "constraint_report"],
+  "properties": {
+    "plan_id": {"type": "string", "format": "uuid"},
+    "status": {"enum": ["DRAFT", "READY", "FAILED"]},
+    "seed": {"type": "integer"},
+    "allocation": {
+      "type": "object",
+      "required": ["PROJECT", "FOUNDATION", "SYSTEM_DESIGN", "OPEN_LOGIC"],
+      "properties": {"PROJECT": {"const": 4}, "FOUNDATION": {"const": 3}, "SYSTEM_DESIGN": {"const": 2}, "OPEN_LOGIC": {"const": 1}}
+    },
+    "items": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["sequence", "question"],
+        "properties": {
+          "sequence": {"type": "integer", "minimum": 1, "maximum": 10},
+          "question": {"$ref": "question.schema.json"},
+          "project_id": {"type": ["string", "null"]},
+          "evidence_refs": {"type": "array", "items": {"$ref": "evidence-ref.schema.json"}}
+        }
+      }
+    },
+    "constraint_report": {"type": "object"}
+  }
+}

@@ -1,0 +1,16 @@
+id: WP-PERF-001
+title: 性能与容量
+pr: PR-3
+status: BLOCKED
+goal: 实现并执行第 22.5 节负载模型
+depends_on: [WP-SECURITY-001]
+outputs: [tests/performance, reports/performance]
+path_allowlist: [tests/performance/**, reports/performance/**]
+traceability:
+  requirements: [REQ-PROFILE-001, REQ-JD-001, REQ-SESSION-001, REQ-ASSESS-001, REQ-ADMIN-001]
+  test_cases: [TC-PERF-001]
+  mocks: [MOCK-*]
+  design: ['22.5']
+verification: [make performance]
+dod: [全部场景P95/P99/错误率/一致性通过, 报告记录环境和commit]
+rollback: 回退导致回归的 WP；性能报告不可篡改

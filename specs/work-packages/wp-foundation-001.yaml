@@ -1,0 +1,33 @@
+id: WP-FOUNDATION-001
+title: Spec materialization
+pr: PR-1
+status: READY
+goal: 将 v0.2 机器契约落盘并锁定 baseline
+depends_on: []
+gates: [Gate-SPEC]
+outputs:
+  - specs/baseline.yaml
+  - specs/openapi/interview-agent.openapi.yaml
+  - specs/schemas/
+  - specs/ddl/v0.2.sql
+  - specs/events/domain-events.schema.json
+  - specs/mocks/
+  - specs/product/
+  - specs/work-packages/
+  - specs/governance/
+  - AGENTS.md
+  - CLAUDE.md
+  - Makefile
+  - tools/spec_check.py
+path_allowlist: [specs/**, AGENTS.md, CLAUDE.md, Makefile, tools/spec_check.py]
+traceability:
+  requirements: [REQ-PROFILE-001, REQ-PROFILE-002, REQ-PROFILE-003, REQ-JD-001, REQ-KNOWLEDGE-001, REQ-KNOWLEDGE-002, REQ-PLAN-001, REQ-SESSION-001, REQ-SESSION-002, REQ-ASSESS-001, REQ-ASSESS-002, REQ-ADMIN-001, REQ-MOCK-001, REQ-FIXTURE-001]
+  test_cases: [TC-PORT-001]
+  mocks: [MOCK-*]
+  design: ['20', '21', '22', '23']
+verification: [make spec-check]
+dod:
+  - 所有规范可解析
+  - checksum 与物化基线一致
+  - 无悬空引用
+rollback: 删除本 WP 新增文件并恢复 baseline 前一 commit

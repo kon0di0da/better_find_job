@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec.local/schemas/error-response.schema.json",
+  "title": "ErrorResponse",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["code", "message", "retryable", "trace_id"],
+  "properties": {
+    "code": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]+$"},
+    "message": {"type": "string"},
+    "retryable": {"type": "boolean"},
+    "trace_id": {"type": "string"},
+    "details": {"type": "object"}
+  }
+}

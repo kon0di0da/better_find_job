@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec.local/schemas/resume-parse-result.schema.json",
+  "title": "ResumeParseResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["resume_id", "version", "status", "fields", "evidence", "warnings"],
+  "properties": {
+    "resume_id": {"type": "string", "format": "uuid"},
+    "version": {"type": "integer", "minimum": 1},
+    "status": {"enum": ["PENDING", "SUCCEEDED", "FAILED"]},
+    "fields": {"type": "object"},
+    "evidence": {"type": "array", "items": {"$ref": "evidence-ref.schema.json"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "task_id": {"type": ["string", "null"], "format": "uuid"}
+  }
+}

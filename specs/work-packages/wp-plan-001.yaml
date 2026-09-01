@@ -1,0 +1,16 @@
+id: WP-PLAN-001
+title: 计划生成
+pr: PR-2
+status: BLOCKED
+goal: 实现 10 题确定性约束求解与快照冻结
+depends_on: [WP-PROFILE-001, WP-JD-001, WP-KNOWLEDGE-001]
+outputs: [apps/interview_service/planning]
+path_allowlist: [apps/interview_service/planning/**]
+traceability:
+  requirements: [REQ-PLAN-001]
+  test_cases: [TC-PLAN-001, TC-PLAN-002]
+  mocks: [MOCK-KNOWLEDGE-001, MOCK-MODEL-PLAN-001]
+  design: []
+verification: [make unit contract-test integration]
+dod: [配额4/3/2/1, JD关联至少7, 项目题4, 不足仅返回PLAN_CONSTRAINT_UNSATISFIED]
+rollback: 关闭计划创建；已 READY 计划只读

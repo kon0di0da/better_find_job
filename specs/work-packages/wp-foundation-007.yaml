@@ -1,0 +1,16 @@
+id: WP-FOUNDATION-007
+title: CI 与门禁
+pr: PR-1
+status: BLOCKED
+goal: 实现 lint、unit、spec、mock、contract、migration 和出口扫描门禁
+depends_on: [WP-FOUNDATION-001, WP-FOUNDATION-002, WP-FOUNDATION-003, WP-FOUNDATION-004, WP-FOUNDATION-005, WP-FOUNDATION-006]
+outputs: [Makefile, .ci, tools/spec_check]
+path_allowlist: [Makefile, .ci/**, tools/spec_check/**]
+traceability:
+  requirements: [REQ-PROFILE-001, REQ-PROFILE-002, REQ-PROFILE-003, REQ-JD-001, REQ-KNOWLEDGE-001, REQ-KNOWLEDGE-002, REQ-PLAN-001, REQ-SESSION-001, REQ-SESSION-002, REQ-ASSESS-001, REQ-ASSESS-002, REQ-ADMIN-001, REQ-MOCK-001, REQ-FIXTURE-001]
+  test_cases: [TC-MOCK-002, TC-PORT-001, TC-STATIC-001]
+  mocks: [MOCK-*]
+  design: ['23.4']
+verification: [make lint unit spec-check mock-check contract-test migration-test]
+dod: [任一子命令失败阻断合并, 证据作为 PR artifact]
+rollback: 回退 CI 配置且不得绕过 required check

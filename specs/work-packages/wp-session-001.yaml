@@ -1,0 +1,16 @@
+id: WP-SESSION-001
+title: 会话与幂等
+pr: PR-2
+status: BLOCKED
+goal: 实现会话命令、状态机与 HTTP 幂等
+depends_on: [WP-PLAN-001]
+outputs: [apps/interview_service/session]
+path_allowlist: [apps/interview_service/session/**]
+traceability:
+  requirements: [REQ-SESSION-001, REQ-SESSION-002]
+  test_cases: [TC-SESSION-001, TC-SESSION-002, TC-SESSION-003, TC-STATE-001, TC-STATE-002, TC-IDEMPOTENCY-001]
+  mocks: [MOCK-MODEL-FOLLOWUP-001]
+  design: []
+verification: [make unit integration e2e]
+dod: [状态边完整, 同Key同payload单副作用, 异参409, 追问超时无追问]
+rollback: 关闭命令路由；保留会话读取和恢复点

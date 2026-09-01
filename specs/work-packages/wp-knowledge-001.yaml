@@ -1,0 +1,16 @@
+id: WP-KNOWLEDGE-001
+title: 题库与合并队列
+pr: PR-2
+status: BLOCKED
+goal: 题目创建、审核、停用、检索和人工合并队列
+depends_on: [WP-FOUNDATION-007]
+outputs: [apps/knowledge_service/questions]
+path_allowlist: [apps/knowledge_service/questions/**]
+traceability:
+  requirements: [REQ-KNOWLEDGE-001, REQ-KNOWLEDGE-002]
+  test_cases: [TC-KNOWLEDGE-001, TC-KNOWLEDGE-002, TC-AUTHZ-001]
+  mocks: [MOCK-KNOWLEDGE-001]
+  design: []
+verification: [make unit contract-test integration security]
+dod: [仅完整的 APPROVED 且 enabled 题可检索, 合并仅人工决策]
+rollback: 关闭写入口；已发布题版本保持不可变

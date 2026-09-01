@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec.local/schemas/evidence-ref.schema.json",
+  "title": "EvidenceRef",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source_type", "source_id", "start_offset", "end_offset", "quote", "checksum"],
+  "properties": {
+    "source_type": {"enum": ["RESUME", "JD", "ANSWER"]},
+    "source_id": {"type": "string"},
+    "page_no": {"type": ["integer", "null"], "minimum": 1},
+    "start_offset": {"type": "integer", "minimum": 0},
+    "end_offset": {"type": "integer", "minimum": 1},
+    "quote": {"type": "string", "minLength": 1},
+    "checksum": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+  }
+}

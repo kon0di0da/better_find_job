@@ -1,0 +1,16 @@
+id: WP-FOUNDATION-002
+title: Monorepo 目录
+pr: PR-1
+status: BLOCKED
+goal: 建立三个 FastAPI 应用与共享 package 边界且不实现业务
+depends_on: [WP-FOUNDATION-001]
+outputs: [apps/profile_service, apps/knowledge_service, apps/interview_service, packages/platform_adapters]
+path_allowlist: [apps/profile_service/**, apps/knowledge_service/**, apps/interview_service/**, packages/platform_adapters/**]
+traceability:
+  requirements: [REQ-MOCK-001]
+  test_cases: [TC-PORT-001]
+  mocks: [MOCK-*]
+  design: ['20.1', '22.3']
+verification: [make lint, make unit]
+dod: [Domain 不依赖 adapter, 三个 app 可独立启动]
+rollback: 回退目录和构建配置
