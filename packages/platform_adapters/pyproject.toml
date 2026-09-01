@@ -1,0 +1,9 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "better-find-job-platform-adapters"
+version = "0.0.0"
+description = "Platform anti-corruption layer for better_find_job"
+requires-python = ">=3.11"
