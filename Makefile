@@ -2,7 +2,7 @@ PYTHON ?= python3
 PYTHONPATHS := apps/profile_service:apps/knowledge_service:apps/interview_service:packages/platform_adapters
 SERVICES := profile_service knowledge_service interview_service
 
-.PHONY: spec-check lint unit acceptance migration-test
+.PHONY: spec-check lint unit acceptance migration-test contract-test
 
 spec-check:
 	$(PYTHON) tools/spec_check.py
@@ -29,3 +29,6 @@ migration-test:
 	@test -n "$${TEST_DATABASE_URL:-}" || \
 		(echo "TEST_DATABASE_URL is required" >&2; exit 2)
 	PYTHONPATH=. $(PYTHON) -m pytest -q tests/migrations/test_migration_contract.py
+
+contract-test:
+	PYTHONPATH=packages $(PYTHON) -m pytest -q packages/contracts/ports/tests
