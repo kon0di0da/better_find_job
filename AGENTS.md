@@ -11,4 +11,4 @@
 7. 仅在依赖全部完成、Gate-SPEC=PASS 且 WP 明确为 READY 时执行；验证命令非 0 时不得继续下一 WP。
 8. 变更必须可追踪至稳定的 REQ/WP/TC/MOCK ID，并按 WP 的 rollback 执行回滚。
 
-当前执行单元：`WP-FOUNDATION-003 数据库迁移框架`。本 WP 仅允许建立 PostgreSQL 迁移、测试与 `make migration-test`，不得实现仓储、业务 API、Mock adapter 或后续 WP。
+当前执行单元：`WP-FOUNDATION-004 Port 契约`。本 WP 仅允许定义六类异步 Port、DTO、错误与能力标记及其测试，不实现具体 Adapter、Mock 或业务逻辑。

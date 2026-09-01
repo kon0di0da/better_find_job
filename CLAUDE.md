@@ -10,4 +10,4 @@
 - 不复用或改写稳定 REQ/WP/TC/MOCK ID。
 - 未经明确要求，不 push、不创建 MR。
 
-当前范围仅为 `WP-FOUNDATION-003`：PostgreSQL migration up/down 骨架及其可执行验收，不实现业务逻辑。
+当前范围仅为 `WP-FOUNDATION-004`：六类 Port、DTO、错误与 capability flags 的声明和契约验收，不实现 Adapter。

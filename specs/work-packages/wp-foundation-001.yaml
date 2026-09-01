@@ -1,7 +1,7 @@
 id: WP-FOUNDATION-001
 title: Spec materialization
 pr: PR-1
-status: READY
+status: DONE
 goal: 将 v0.2 机器契约落盘并锁定 baseline
 depends_on: []
 gates: [Gate-SPEC]

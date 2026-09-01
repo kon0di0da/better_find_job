@@ -1,16 +1,42 @@
 id: WP-FOUNDATION-004
 title: Port 契约
 pr: PR-1
-status: BLOCKED
+status: READY
 goal: 声明六类 Port、DTO、PortError 与 capability flags
 depends_on: [WP-FOUNDATION-002]
-outputs: [packages/contracts/ports]
-path_allowlist: [packages/contracts/ports/**]
+outputs:
+  - packages/contracts/ports
+  - Makefile
+path_allowlist:
+  - packages/contracts/ports/**
+  - Makefile
 traceability:
   requirements: [REQ-MOCK-001]
   test_cases: [TC-PORT-001]
   mocks: [MOCK-*]
   design: ['22.3']
+contract:
+  version: '0.2'
+  ports: [ResumeParserPort, ModelGatewayPort, KnowledgeSearchPort, AgentOpsPort, ObjectStoragePort, PIIRedactorPort]
+  async_methods: [parse, generate, search, record, put, get, delete, redact]
+  idempotent_methods: [parse, generate, record, put, delete, redact]
+  timeout:
+    parameter: timeout_seconds
+    constraint: greater_than_zero
+    error_code: PORT_TIMEOUT
+    retryable: true
+  fault_codes_source: specs/mocks/manifest.yaml
 verification: [make contract-test]
-dod: [签名超时错误和幂等契约与 Spec 一致]
+acceptance:
+  TC-PORT-001:
+    - 六类 runtime-checkable Protocol 均以 contract_version 0.2 导出
+    - 所有 Port 方法均为 async 且显式声明 keyword-only timeout_seconds
+    - 写入与生成类方法显式声明非空 idempotency_key
+    - PortError 可无损转换为 ErrorResponse 字段
+    - PortTimeoutError 固定为可重试 PORT_TIMEOUT
+    - manifest 中全部 fault_scenarios 均能映射到 PortFaultCode
+dod:
+  - 签名、超时错误和幂等契约与 Spec 一致
+  - DTO 拒绝未声明字段和非法约束
+  - 不包含任何具体 Adapter 或业务逻辑
 rollback: 恢复上一 contract_version，禁止兼容性静默回退

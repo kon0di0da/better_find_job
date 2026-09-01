@@ -1,7 +1,7 @@
 id: WP-FOUNDATION-003
 title: 数据库迁移框架
 pr: PR-1
-status: READY
+status: DONE
 goal: 建立三个服务 schema 与 migration up/down 骨架
 depends_on: [WP-FOUNDATION-001, WP-FOUNDATION-002]
 outputs:
