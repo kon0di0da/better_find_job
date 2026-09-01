@@ -2,7 +2,7 @@ PYTHON ?= python3
 PYTHONPATHS := apps/profile_service:apps/knowledge_service:apps/interview_service:packages/platform_adapters
 SERVICES := profile_service knowledge_service interview_service
 
-.PHONY: spec-check lint unit acceptance migration-test contract-test mock-check fixture-test fixture-check
+.PHONY: spec-check lint unit acceptance migration-test contract-test mock-check fixture-test fixture-check ci-test
 
 spec-check:
 	$(PYTHON) tools/spec_check.py
@@ -41,3 +41,6 @@ fixture-test:
 	PYTHONPATH=. $(PYTHON) -m pytest -q tests/fixtures
 
 fixture-check: fixture-test
+
+ci-test:
+	PYTHONPATH=tests/ci $(PYTHON) -m pytest -q tests/ci
