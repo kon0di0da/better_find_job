@@ -10,4 +10,4 @@
 - 不复用或改写稳定 REQ/WP/TC/MOCK ID。
 - 未经明确要求，不 push、不创建 MR。
 
-当前范围仅为 `WP-FOUNDATION-005`：9 个已登记 Mock、故障注入、幂等行为和 Manifest 验收，不连接真实平台。
+当前范围仅为 `WP-FOUNDATION-006`：mvp-fixture-v1、确定性 loader、checksum manifest 与 fixture 验收；仅使用合成非 PII 数据，不覆盖已发布 fixture。

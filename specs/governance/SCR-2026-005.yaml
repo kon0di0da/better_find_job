@@ -1,0 +1,41 @@
+scr_id: SCR-2026-005
+status: APPROVED
+reason: >-
+  WP-FOUNDATION-005 已通过验收；WP-FOUNDATION-006 的依赖已全部完成但状态仍为
+  BLOCKED，且现有规格未授权 Makefile 与 fixture 专项测试路径，也未将数据规模、
+  非 PII、发布不可覆盖、checksum manifest 和冷启动重放要求固化为机器可执行验收。
+requested_by: 孙雨
+requested_at: '2026-09-02'
+impact:
+  requirements: [REQ-FIXTURE-001]
+  api: []
+  ddl: []
+  events: []
+  work_packages: [WP-FOUNDATION-005, WP-FOUNDATION-006]
+  test_cases: [TC-FIXTURE-001, TC-AI-GOLD-001]
+  mocks: [MOCK-RESUME-001, MOCK-MODEL-JD-001, MOCK-MODEL-PLAN-001, MOCK-MODEL-FOLLOWUP-001, MOCK-MODEL-ASSESS-001, MOCK-KNOWLEDGE-001, MOCK-AGENTOPS-001, MOCK-OBJECT-001, MOCK-PII-001]
+changes:
+  - 将已验收的 WP-FOUNDATION-005 状态调整为 DONE
+  - 将 WP-FOUNDATION-006 状态从 BLOCKED 调整为 READY
+  - 将 Makefile 与 tests/fixtures/** 纳入 WP-FOUNDATION-006 的输出和 path_allowlist
+  - make fixture-test 是规范验收入口；可选 make fixture-check 仅可作为等价别名
+  - 无显式 seed 时固定使用 20260901
+  - mvp-fixture-v1 固定包含 5 份 resumes、10 份 JDs、至少 100 道 questions 与 30 条 gold cases
+  - fixture 只能包含合成非 PII 数据，不得包含真实用户数据或平台凭证
+  - 已发布 dataset_version 不得覆盖；重复发布必须失败且原内容 checksum 保持不变
+  - checksum manifest 按相对路径排序记录全部 payload 文件的 SHA-256
+  - 两次独立空目录冷启动的全部文件、checksum manifest 与记录 ID 顺序必须逐字节一致
+security_privacy: >-
+  Fixture 仅允许合成非 PII 数据；机器验收必须拒绝真实邮箱、手机号、简历、答案、
+  访问令牌和平台凭证，生成与校验过程不得访问外部平台。
+compatibility: backward-compatible
+version_change: patch
+approvals:
+  product: 'APPROVED: 孙雨, 2026-09-02'
+  backend: 'APPROVED: 孙雨, 2026-09-02'
+  qa: 'APPROVED: 孙雨, 2026-09-02'
+  security: 'APPROVED: 孙雨, 2026-09-02'
+migration_plan: 新增不可变的 mvp-fixture-v1 数据集；不迁移数据库，不修改外部 API 或已发布 fixture
+rollback_plan: 删除未发布的新 dataset_version 与 loader；已发布 fixture 保持只读且不得覆盖
+baseline_before: 6908e43c53c9285ebdc44324383022db40ec0608
+baseline_after: v0.2+SCR-2026-005

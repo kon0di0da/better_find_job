@@ -11,4 +11,4 @@
 7. 仅在依赖全部完成、Gate-SPEC=PASS 且 WP 明确为 READY 时执行；验证命令非 0 时不得继续下一 WP。
 8. 变更必须可追踪至稳定的 REQ/WP/TC/MOCK ID，并按 WP 的 rollback 执行回滚。
 
-当前执行单元：`WP-FOUNDATION-005 Mock manifest 与适配器`。本 WP 仅允许实现 Manifest 登记的 9 个确定性内存 Mock、共享故障注入及其测试，不连接真实平台，不引入 Fixture 语料或业务逻辑。
+当前执行单元：`WP-FOUNDATION-006 Fixture loader`。本 WP 仅允许实现 mvp-fixture-v1、确定性 loader 与机器验收；默认 seed 为 20260901，仅使用合成非 PII 数据，不覆盖已发布 fixture，不实现业务服务。

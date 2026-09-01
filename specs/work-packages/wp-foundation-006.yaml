@@ -1,16 +1,66 @@
 id: WP-FOUNDATION-006
 title: Fixture loader
 pr: PR-1
-status: BLOCKED
+status: READY
 goal: 按 seed 和 checksum 装载可重放 fixture
 depends_on: [WP-FOUNDATION-003, WP-FOUNDATION-005]
-outputs: [fixtures/mvp-fixture-v1, tools/fixture_loader]
-path_allowlist: [fixtures/mvp-fixture-v1/**, tools/fixture_loader/**]
+outputs:
+  - fixtures/mvp-fixture-v1
+  - tools/fixture_loader
+  - tests/fixtures
+  - Makefile
+path_allowlist:
+  - fixtures/mvp-fixture-v1/**
+  - tools/fixture_loader/**
+  - tests/fixtures/**
+  - Makefile
 traceability:
   requirements: [REQ-FIXTURE-001]
-  test_cases: [TC-FIXTURE-001]
+  test_cases: [TC-FIXTURE-001, TC-AI-GOLD-001]
   mocks: [MOCK-*]
   design: ['13', '23']
+fixture_contract:
+  dataset_version: mvp-fixture-v1
+  default_seed: 20260901
+  sizes:
+    resumes: 5
+    jds: 10
+    questions_minimum: 100
+    gold_cases: 30
+  data_policy: synthetic_non_pii_only
+  network_access: forbidden
+  published_dataset_policy: immutable_no_overwrite
+  checksum_manifest:
+    algorithm: sha256
+    coverage: all_payload_files
+    ordering: relative_path_ascending
+  replay:
+    cold_starts: 2
+    clean_destination_per_start: true
+    equality:
+      - all_files_byte_for_byte
+      - checksum_manifest_byte_for_byte
+      - ordered_record_ids
 verification: [make fixture-test]
-dod: [两次冷启动的 ID 顺序响应和 checksum 相同]
-rollback: 删除新 dataset_version，旧 fixture 不覆盖
+command_contract:
+  canonical: make fixture-test
+  optional_alias: make fixture-check
+  alias_policy: 若实现别名，必须与 fixture-test 执行同一验收且返回相同退出码
+  success_exit_code: 0
+  failure_exit_code: non-zero
+acceptance:
+  TC-FIXTURE-001:
+    - 未显式提供 seed 时使用 20260901
+    - 生成 5 份 resumes、10 份 JDs、至少 100 道 questions 与 30 条 gold cases
+    - checksum manifest 按相对路径升序记录全部 payload 文件的 SHA-256
+    - 两次独立空目录冷启动的全部文件与 checksum manifest 逐字节一致，记录 ID 及其顺序一致
+    - 对已发布 dataset_version 的覆盖尝试必须失败，且发布前后全部 checksum 不变
+    - 发现真实 PII、平台凭证、外部网络访问或任一契约不一致时命令必须返回非零
+  TC-AI-GOLD-001:
+    - 30 条合成 gold cases 使用固定 ID 和固定顺序并纳入 checksum manifest
+dod:
+  - make fixture-test 无参数执行成功并覆盖全部机器验收
+  - 默认 seed、数据规模、checksum manifest 与不可覆盖策略均通过校验
+  - 两次冷启动的文件字节、checksum 和记录顺序完全一致
+  - 数据仅为合成非 PII 且不访问外部平台
+rollback: 删除未发布的新 dataset_version 与 loader；已发布 fixture 保持只读且不得覆盖
